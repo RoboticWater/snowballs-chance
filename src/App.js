@@ -17,6 +17,7 @@ class App extends Component {
       dying: false,
       interval: null,
       playerSide: false,
+      start: false,
     }
   }
 
@@ -33,20 +34,23 @@ class App extends Component {
   componentWillUnmount() {
     if (this.state.interval) clearInterval(this.state.interval);
   }
-
+// <PlayerDisplay life={this.state.life} corner={this.state.playerSide}/>
   render() {
     return (
       <div className="App">
-        <PlayerDisplay life={this.state.life} corner={this.state.playerSide}/>
-        <audio src={intro} autoPlay></audio>
+        
+        {this.state.start && <div className="title-card">
+          <h1>A Snowball's Chance</h1>
+          <h2>in</h2>
+          <div className="centered hell"><HELL/></div>
+          <audio src={intro} autoPlay></audio>
+        </div>}
+        {!this.state.start && <div className="start-button" onClick={() => this.setState({ start: true })}>Begin</div>}
         <div className="content">
           <div className="left"></div>
           <div className="center">
-            <div className="title-card">
-              <h1>A Snowball's Chance</h1>
-              <h2>in</h2>
-              <div className="centered hell"><HELL/></div>
-            </div>
+            <div className="image"></div>
+            <div className="dialog-box"></div>
           </div>
           <div className="right"></div>
         </div>

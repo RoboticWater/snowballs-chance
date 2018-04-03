@@ -18,10 +18,28 @@ body {
   justify-content: center;
 }
 
+.start-button {
+  font-family: 'sophiaregular';
+  font-size: 60px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  background: #363636;
+  color: #FaFaF8;
+  padding: 10px 20px;
+  display: inline-block;
+  position: fixed;
+  border-radius: 10px;
+  top: 35%;
+}
+
 .content {
   display: flex;
   flex: 1;
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 .App-logo {
@@ -69,7 +87,15 @@ body {
 
 .center {
   flex: 1;
+  display: flex;
+  flex-flow: column;
   /* background: #ebebea; */
+  .image {
+    flex: 0 0 70%;
+  }
+  .dialog-box {
+    flex: 0 0 30%;
+  }
 }
 
 .right {
@@ -82,21 +108,24 @@ body {
 }
 
 .title-card {
-  margin-top: 200px;
   text-align: center;
   font-family: 'sophiaregular';
+  top: 38%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
   h1 {
     font-size: 50px;
     margin: 0;
-    animation: 1s linear 0s 1 appear;
+    animation: 2s linear 0s 1 appear;
   }
   h2 {
     font-size: 40px;
     margin: 0 0 10px 0;
-    animation: 2.6s linear 0s 1 appear;
+    animation: 3.5s linear 0s 1 appear;
   }
   .hell {
-    animation: 3.7s linear 0s 1 appear;
+    animation: 6.12s linear 0s 1 appear;
   }
 }
 
