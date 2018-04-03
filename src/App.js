@@ -19,6 +19,7 @@ class App extends Component {
       playerSide: false,
       start: false,
     }
+    this.introSound = new Audio(intro);
   }
 
   changeLife() {
@@ -38,14 +39,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        
         {this.state.start && <div className="title-card">
           <h1>A Snowball's Chance</h1>
           <h2>in</h2>
           <div className="centered hell"><HELL/></div>
-          <audio src={intro} autoPlay></audio>
         </div>}
-        {!this.state.start && <div className="start-button" onClick={() => this.setState({ start: true })}>Begin</div>}
+        {!this.state.start && <div className="start-button" onClick={() => {this.introSound.play();this.setState({ start: true })}}>Begin</div>}
         <div className="content">
           <div className="left"></div>
           <div className="center">
