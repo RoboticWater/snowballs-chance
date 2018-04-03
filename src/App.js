@@ -14,27 +14,29 @@ class App extends Component {
     super(props);
     this.state = {
       life: startLife,
+      dying: false,
       interval: null,
       playerSide: false,
     }
   }
 
-  lifeCountdown() {
-    this.setState(prev => ({ life: prev.life - 1 }));
+  changeLife() {
+    if (this.state.dying) this.setState(prev => ({ life: prev.life - 1 }));
+    else this.setState(prev => ({ life: prev.life + 2 * (prev.life % 2 - 0.5) }));
   }
 
   componentDidMount() {
-    let interval = setInterval(this.lifeCountdown.bind(this), 100);
+    let interval = setInterval(this.changeLife.bind(this), 100);
     this.setState({ interval: interval });
   }
 
   componentWillUnmount() {
-    clearInterval(this.state.interval);
+    if (this.state.interval) clearInterval(this.state.interval);
   }
 
   render() {
     return (
-      <div className="App" onClick={() => this.setState(prev => ({playerSide: !prev.playerSide}))}>
+      <div className="App">
         <PlayerDisplay life={this.state.life} corner={this.state.playerSide}/>
         <audio src={intro} autoPlay></audio>
         <div className="left"></div>
