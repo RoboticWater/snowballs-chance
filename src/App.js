@@ -5,7 +5,8 @@ import svgpath from 'svgpath';
 import rough from 'roughjs';
 import classNames from 'classnames';
 
-import intro from './resources/sound/intro-timpani.mp3'
+import intro from './resources/sound/intro-timpani.mp3';
+import sunburst from './resources/svg/sunburst.svg';
 
 const startLife = 1000
 
@@ -44,7 +45,10 @@ class App extends Component {
           <h2>in</h2>
           <div className="centered hell"><HELL/></div>
         </div>}
-        {!this.state.start && <div className="start-button" onClick={() => {this.introSound.play();this.setState({ start: true })}}>Begin</div>}
+        {!this.state.start && <div className="begin">
+          <img src={sunburst} alt=""/>
+          <div className="button" onClick={() => {this.introSound.play();this.setState({ start: true })}}>Begin</div>
+        </div>}
         <div className="content">
           <div className="left"></div>
           <div className="center">

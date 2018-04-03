@@ -18,26 +18,40 @@ body {
   justify-content: center;
 }
 
-.start-button {
-  font-family: 'sophiaregular';
-  font-size: 60px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  background: #363636;
-  color: #FaFaF8;
-  display: inline-block;
+.begin {
   position: fixed;
-  border-radius: 100%;
   top: 35%;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  .button {
+    font-family: 'sophiaregular';
+    font-size: 60px;
+    user-select: none;
+    cursor: pointer;
+    background: #363636;
+    color: #FaFaF8;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #FaFaF8 solid 3px;
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+pointer-events: none;
+    width: 100px;
+    transform: translate(-50%, -50%);
+    transition: width 1s ease;
+    z-index: -1;
+    user-select: none;
+    animation: sunburst infinite 30s linear;
+  }
+  &:hover img {
+    width: 250px;
+  }
 }
 
 .content {
@@ -46,30 +60,6 @@ body {
   max-width: 1200px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 .PlayerDisplay {
   /* animation: 3.7s linear 0s 1 appear; */
@@ -143,4 +133,9 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+@keyframes sunburst {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }
