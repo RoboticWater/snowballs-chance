@@ -5,6 +5,8 @@ import svgpath from 'svgpath';
 import rough from 'roughjs';
 import classNames from 'classnames';
 
+import intro from './resources/sound/intro-timpani.mp3'
+
 const startLife = 1000
 
 class App extends Component {
@@ -34,8 +36,15 @@ class App extends Component {
     return (
       <div className="App" onClick={() => this.setState(prev => ({playerSide: !prev.playerSide}))}>
         <PlayerDisplay life={this.state.life} corner={this.state.playerSide}/>
+        <audio src={intro} autoPlay></audio>
         <div className="left"></div>
-        <div className="center"></div>
+        <div className="center">
+          <div className="title-card">
+            <h1>A Snowball's Chance</h1>
+            <h2>in</h2>
+            <div className="centered hell"><HELL/></div>
+          </div>
+        </div>
         <div className="right"></div>
       </div>
     );
@@ -77,6 +86,51 @@ class PlayerDisplay extends Component {
     );
   }
 }
+
+class HELL extends Component {
+  constructor(props) {
+    super(props);
+    this.context = null;
+    this.canvas = React.createRef();
+  }
+
+  update() {
+    let context = this.canvas.current.getContext('2d');
+    context.save();
+    context.setTransform(1, 0, 0, 1, 0, 0);
+    context.clearRect(0, 0, this.canvas.current.width, this.canvas.current.height);
+    context.restore();
+
+    const rc = rough.canvas(this.canvas.current);
+    rc.path("M101.1,63.2V14.5h25.4v127.2h-25.4V88.7H54v53.1H28.6V14.5H54v48.7H101.1z", { roughness: 2, fill: '#e83b2e', stroke: '#e83b2e', fillWeight: 1 });
+    rc.path("M233.3,14.3v25.4h-59.4v23.4h49.1v25.4h-49.1v27.6h58.9v25.4h-84.3V14.3H233.3z", { roughness: 2, fill: '#e83b2e', stroke: '#e83b2e', fillWeight: 1 });
+    rc.path("M282.3,14.3v102h47.4v25.3h-72.9V14.3H282.3z", { roughness: 2, fill: '#e83b2e', stroke: '#e83b2e', fillWeight: 1 });
+    rc.path("M378.9,14.3v102h47.4v25.3h-72.9V14.3H378.9z", { roughness: 2, fill: '#e83b2e', stroke: '#e83b2e', fillWeight: 1 });
+  }
+
+  componentDidMount() {
+    let interval = setInterval(this.update.bind(this), 100);
+    this.setState({ interval: interval });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.interval);
+  }
+
+  componentWillReceiveProps(newProps) {
+    
+  }
+
+  render() {
+    return (
+      <div className={classNames("HELL", {corner: this.props.corner})} style={{display: 'inline-block'}}>
+        <canvas className="hell-text" width="430" height="200" ref={this.canvas}></canvas>
+      </div>
+    );
+  }
+}
+
+
 
 export default App;
 
