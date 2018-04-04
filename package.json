@@ -10,7 +10,7 @@
     "babel-loader": "7.1.2",
     "babel-preset-react-app": "^3.1.1",
     "babel-runtime": "6.26.0",
-    "bondage": "^1.0.3",
+    "bondage": "https://github.com/jhayley/bondage.js#0b1fac2e2f289781b78bb85ec0f274fc4ad0a659",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
     "classnames": "^2.2.5",
