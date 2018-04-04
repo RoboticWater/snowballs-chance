@@ -12,7 +12,7 @@
 	{
 		"title": "ThreeNodes",
 		"tags": "",
-		"body": "<i>This</i> is a test line\n<b>This</b> is another,<br>Longer test line[[Hello|Option1]]\n[[Option2]]",
+		"body": "<i>This</i> is a test line\n<<audio amb_horror>><b>This</b> is another,<br>Longer test line[[Hello|Option1]]\n[[Option2]]",
 		"position": {
 			"x": 449,
 			"y": 252

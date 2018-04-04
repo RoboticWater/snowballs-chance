@@ -11,7 +11,11 @@ import test from './resources/test.json';
 
 import Fade from './Fade';
 
-const startLife = 1000
+const startLife = 1000;
+
+const audio_files = {
+  amb_horror: require('./resources/sound/amb_horror.wav'),
+}
 
 class App extends Component {
   constructor(props) {
@@ -24,6 +28,7 @@ class App extends Component {
       start: false,
       showDialog: false,
       showTitle: false,
+      audio: null,
     }
     this.introSound = new Audio(intro);
   }
@@ -31,6 +36,10 @@ class App extends Component {
   changeLife() {
     // if (this.state.dying) this.setState(prev => ({ life: prev.life - 1 }));
     // else this.setState(prev => ({ life: prev.life + 2 * (prev.life % 2 - 0.5) }));
+  }
+
+  setAudio(file) {
+    this.setState({ audio: audio_files[file] })
   }
 
   componentDidMount() {
@@ -51,8 +60,10 @@ class App extends Component {
   }
 // <PlayerDisplay life={this.state.life} corner={this.state.playerSide}/>
   render() {
+    console.log(this.state)
     return (
       <div className="App">
+        <audio src={this.state.audio} autoPlay loop></audio>
         {this.state.start && <Fade startVisisble show={this.state.showTitle} className="title-card">
           <h1>A Snowball's Chance</h1>
           <h2>in</h2>
@@ -64,7 +75,10 @@ class App extends Component {
           <div className="center">
             <div className="image"></div>
             <div className="dialog-box">
-              <DialogDisplay show={this.state.showDialog}/>
+              {this.state.start && <DialogDisplay
+                show={this.state.showDialog}
+                setAudio={this.setAudio.bind(this)}
+              />}
             </div>
           </div>
           <div className="right"></div>
@@ -162,8 +176,9 @@ class DialogDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      current: {},
-      next: null,
+      text: '',
+      options: [],
+      selector: null,
       runner: null,
       dialog: null,
     }
@@ -178,6 +193,7 @@ class DialogDisplay extends Component {
           console.log("SET IMAGE")
         } else if (delim === 'audio') {
           console.log("SET AUDIO")
+          this.props.setAudio(command.split(' ')[1])
         }
       });
       this.state.dialog = this.state.runner.run('ThreeNodes');
@@ -189,42 +205,20 @@ class DialogDisplay extends Component {
   getNext(select=null) {
     let result;
     if (select !== null) {
-      this.state.current.selector.select(select)
-      result = this.state.dialog.next().value;
-    } else {
-      if (this.state.next) {
-        result = this.state.next;
-      } else {
-        result = this.state.dialog.next().value;
-      }
+      this.state.selector.select(select)
     }
-    let next = this.state.dialog.next().value;
+    result = this.state.dialog.next().value;
     if (result instanceof bondage.TextResult) {
-      if (next instanceof bondage.OptionsResult) {
-        this.setState(prev => ({ 
-          current: {
-            text: result.text,
-            options: next.options,
-            selector: next,
-          },
-          next: next,
-        }));
-      } else {
-        this.setState(prev => ({ 
-          current: { text: result.text },
-          next: next
-        }));
-      }
+      this.setState(prev => ({ 
+        text: result.text,
+        selector: null,
+      }));
+    } else if (result instanceof bondage.OptionsResult) {
+      this.setState(prev => ({ 
+        selector: result,
+        options: result.options,
+      }));
     }
-    // if (result instanceof bondage.OptionsResult) {
-    //   this.setState(prev => ({ 
-    //     current: { 
-    //       last: prev.current.text,
-    //       options: result ? result.options : undefined,
-    //       selector: result 
-    //     }
-    //   }));
-    // }
   }
 
   renderOptions(options) {
@@ -234,15 +228,15 @@ class DialogDisplay extends Component {
   }
 
   render() {
-    console.log(this.state.current)
-    let current = this.state.current;
+    // console.log(this.state)
     return (
       <div className={classNames("DialogDisplay", {show: this.props.show})}>
         <div className="text" dangerouslySetInnerHTML={{
-          __html: current.text 
+          __html: this.state.text 
         }}></div>
-        {current.options && this.renderOptions(current.options)}
-        {!current.options && <button className="next" onClick={() => this.getNext()}>>>>>></button>}
+        {this.state.selector ? 
+          this.renderOptions(this.state.options) : 
+          <button className="next" onClick={() => this.getNext()}>>>>>></button>}
       </div>
     );
   }
