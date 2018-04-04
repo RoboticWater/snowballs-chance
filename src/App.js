@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import svgpath from 'svgpath';
 import rough from 'roughjs';
 import classNames from 'classnames';
+import bondage from 'bondage';
 
 import intro from './resources/sound/intro-timpani.mp3';
 import sunburst from './resources/svg/sunburst.svg';
+import test from './resources/test.json';
+
+import Fade from './Fade';
 
 const startLife = 1000
 
@@ -19,44 +22,57 @@ class App extends Component {
       interval: null,
       playerSide: false,
       start: false,
+      showDialog: false,
+      showTitle: false,
     }
     this.introSound = new Audio(intro);
   }
 
   changeLife() {
-    if (this.state.dying) this.setState(prev => ({ life: prev.life - 1 }));
-    else this.setState(prev => ({ life: prev.life + 2 * (prev.life % 2 - 0.5) }));
+    // if (this.state.dying) this.setState(prev => ({ life: prev.life - 1 }));
+    // else this.setState(prev => ({ life: prev.life + 2 * (prev.life % 2 - 0.5) }));
   }
 
   componentDidMount() {
     let interval = setInterval(this.changeLife.bind(this), 100);
     this.setState({ interval: interval });
+    // runner.load(yarnData);
   }
 
   componentWillUnmount() {
     if (this.state.interval) clearInterval(this.state.interval);
   }
+
+  begin() {
+    this.introSound.play();
+    this.setState({ start: true, showTitle: true });
+    setTimeout(() => this.setState({ showTitle: false }), 14000);
+    setTimeout(() => this.setState({ showDialog: true }), 17000);
+  }
 // <PlayerDisplay life={this.state.life} corner={this.state.playerSide}/>
   render() {
     return (
       <div className="App">
-        {this.state.start && <div className="title-card">
+        {this.state.start && <Fade startVisisble show={this.state.showTitle} className="title-card">
           <h1>A Snowball's Chance</h1>
           <h2>in</h2>
           <div className="centered hell"><HELL/></div>
-        </div>}
-        {!this.state.start && <div className="begin">
-          <img src={sunburst} alt=""/>
-          <div className="button" onClick={() => {this.introSound.play();this.setState({ start: true })}}>Begin</div>
-        </div>}
+        </Fade>}
+        {!this.state.start && <div className="disclaimer">This project includes sound</div>}
         <div className="content">
           <div className="left"></div>
           <div className="center">
             <div className="image"></div>
-            <div className="dialog-box"></div>
+            <div className="dialog-box">
+              <DialogDisplay show={this.state.showDialog}/>
+            </div>
           </div>
           <div className="right"></div>
         </div>
+        {!this.state.start && <div className="begin">
+          <img src={sunburst} alt=""/>
+          <div className="button" onClick={() => this.begin()}>Begin</div>
+        </div>}
       </div>
     );
   }
@@ -142,6 +158,95 @@ class HELL extends Component {
 }
 
 
+class DialogDisplay extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      current: {},
+      next: null,
+      runner: null,
+      dialog: null,
+    }
+  }
+
+  componentDidMount() {
+    this.setState({ runner: new bondage.Runner() }, () => {
+      this.state.runner.load(test);
+      this.state.runner.setCommandHandler(command => {
+        let delim = command.split(' ')[0];
+        if (delim === 'image') {
+          console.log("SET IMAGE")
+        } else if (delim === 'audio') {
+          console.log("SET AUDIO")
+        }
+      });
+      this.state.dialog = this.state.runner.run('ThreeNodes');
+      this.getNext()
+    });
+    
+  }
+
+  getNext(select=null) {
+    let result;
+    if (select !== null) {
+      this.state.current.selector.select(select)
+      result = this.state.dialog.next().value;
+    } else {
+      if (this.state.next) {
+        result = this.state.next;
+      } else {
+        result = this.state.dialog.next().value;
+      }
+    }
+    let next = this.state.dialog.next().value;
+    if (result instanceof bondage.TextResult) {
+      if (next instanceof bondage.OptionsResult) {
+        this.setState(prev => ({ 
+          current: {
+            text: result.text,
+            options: next.options,
+            selector: next,
+          },
+          next: next,
+        }));
+      } else {
+        this.setState(prev => ({ 
+          current: { text: result.text },
+          next: next
+        }));
+      }
+    }
+    // if (result instanceof bondage.OptionsResult) {
+    //   this.setState(prev => ({ 
+    //     current: { 
+    //       last: prev.current.text,
+    //       options: result ? result.options : undefined,
+    //       selector: result 
+    //     }
+    //   }));
+    // }
+  }
+
+  renderOptions(options) {
+    return options.map((option, index) => (
+      <button key={index} onClick={() => this.getNext(index)}>{option}</button>
+    ))
+  }
+
+  render() {
+    console.log(this.state.current)
+    let current = this.state.current;
+    return (
+      <div className={classNames("DialogDisplay", {show: this.props.show})}>
+        <div className="text" dangerouslySetInnerHTML={{
+          __html: current.text 
+        }}></div>
+        {current.options && this.renderOptions(current.options)}
+        {!current.options && <button className="next" onClick={() => this.getNext()}>>>>>></button>}
+      </div>
+    );
+  }
+}
 
 export default App;
 

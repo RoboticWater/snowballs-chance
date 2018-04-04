@@ -5,10 +5,15 @@
   font-weight: normal;
   font-style: normal;
 }
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,600,600i');
+
+$black: #424242;
+$white: #FaFaF8;
 body {
-  background: #FdFdFb;
-  color: #363636;
-  background: radial-gradient(transparent 50%, rgba(0,0,0,0.1)), #FaFaF8;
+  background: $white;
+  color: $black;
+  background: radial-gradient(transparent 50%, rgba(0,0,0,0.1)), $white;
+  font-family: 'EB Garamond', serif;
   /* box-shadow: inset 0 0 150px rgba(0,0,0,0.21); */
 }
 .App {
@@ -27,24 +32,24 @@ body {
     font-size: 60px;
     user-select: none;
     cursor: pointer;
-    background: #363636;
-    color: #FaFaF8;
+    background: $black;
+    color: $white;
     border-radius: 100%;
     width: 150px;
     height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: #FaFaF8 solid 3px;
+    border: $white solid 3px;
   }
   img {
     position: absolute;
     top: 50%;
     left: 50%;
-pointer-events: none;
-    width: 100px;
+    pointer-events: none;
+    width: 150px;
     transform: translate(-50%, -50%);
-    transition: width 1s ease;
+    transition: width 0.75s cubic-bezier(.47,.05,.19,.97);
     z-index: -1;
     user-select: none;
     animation: sunburst infinite 30s linear;
@@ -52,6 +57,18 @@ pointer-events: none;
   &:hover img {
     width: 250px;
   }
+}
+
+.disclaimer {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  color: #555555bb;
+  width: 300px;
+  text-align: center;
 }
 
 .content {
@@ -67,7 +84,7 @@ pointer-events: none;
   bottom: 40%;
   left: 50%;
   transform: translate(-50%, 50%);
-  transition: transform 0.5s linear, left 1s cubic-bezier(.6,.05,.19,.97) , bottom 1s cubic-bezier(.6,.05,.19,.97) ;
+  transition: transform 0.5s linear, left 1s cubic-bezier(.6,.05,.19,.97), bottom 1s cubic-bezier(.6,.05,.19,.97) ;
   &.corner {
     left: 0;
     bottom: 0;
@@ -83,12 +100,11 @@ pointer-events: none;
   flex: 1;
   display: flex;
   flex-flow: column;
-  /* background: #ebebea; */
   .image {
-    flex: 0 0 70%;
+    flex: 1 1 0;
   }
   .dialog-box {
-    flex: 0 0 30%;
+    flex: 0 0 55%;
   }
 }
 
@@ -111,12 +127,12 @@ pointer-events: none;
   h1 {
     font-size: 50px;
     margin: 0;
-    animation: 2s linear 0s 1 appear;
+    animation: 1.7s linear 0s 1 appear;
   }
   h2 {
     font-size: 40px;
     margin: 0 0 10px 0;
-    animation: 3.5s linear 0s 1 appear;
+    animation: 3.2s linear 0s 1 appear;
   }
   .hell {
     animation: 6.12s linear 0s 1 appear;
@@ -138,4 +154,15 @@ pointer-events: none;
 @keyframes sunburst {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.DialogDisplay {
+  opacity: 0;
+  transition: opacity cubic-bezier(.6,.05,.19,.97) 2s;
+  .text {
+    font-size: 20px;
+  }
+  &.show {
+    opacity: 1;
+  }
 }
