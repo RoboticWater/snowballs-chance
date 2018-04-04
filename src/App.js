@@ -46,8 +46,8 @@ class App extends Component {
   begin() {
     this.introSound.play();
     this.setState({ start: true, showTitle: true });
-    setTimeout(() => this.setState({ showTitle: false }), 14000);
-    setTimeout(() => this.setState({ showDialog: true }), 17000);
+    setTimeout(() => this.setState({ showTitle: false }), 12000);
+    setTimeout(() => this.setState({ showDialog: true }), 15000);
   }
 // <PlayerDisplay life={this.state.life} corner={this.state.playerSide}/>
   render() {
