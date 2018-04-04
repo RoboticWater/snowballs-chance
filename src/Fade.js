@@ -19,7 +19,6 @@ class Fade extends Component {
   }
 
   render() {
-  	// console.log(this.state)
   	return this.state.gone ? null : (
 			<div className={classNames("Fade", this.props.className, {show: this.props.show})}>
 				{this.props.children}

@@ -15,6 +15,7 @@ const startLife = 1000;
 
 const audio_files = {
   amb_horror: require('./resources/sound/amb_horror.wav'),
+  amb_office: require('./resources/sound/office_music.mp3'),
 }
 
 class App extends Component {
@@ -28,9 +29,11 @@ class App extends Component {
       start: false,
       showDialog: false,
       showTitle: false,
-      audio: null,
     }
     this.introSound = new Audio(intro);
+    this.audioAmbient = new Audio();
+    this.audioAmbient.autoplay = true;
+    this.audioAmbient.loop = true;
   }
 
   changeLife() {
@@ -39,7 +42,23 @@ class App extends Component {
   }
 
   setAudio(file) {
-    this.setState({ audio: audio_files[file] })
+    if (!this.audioAmbient.src) {
+      this.audioAmbient.src = audio_files[file];
+      this.audioAmbient.volume = 1;
+    } else {
+      var switchAudio = setInterval(() => {
+        if (this.audioAmbient.volume - 0.2 <= 0) {
+          this.audioAmbient.src = audio_files[file];
+          this.audioAmbient.volume = 1;
+          clearInterval(switchAudio)
+        }
+        this.audioAmbient.volume -= 0.2;
+      }, 100);
+    }
+  }
+
+  setSnowball(state) {
+    this.setState({ snowball: state });
   }
 
   componentDidMount() {
@@ -60,16 +79,17 @@ class App extends Component {
   }
 // <PlayerDisplay life={this.state.life} corner={this.state.playerSide}/>
   render() {
-    console.log(this.state)
     return (
       <div className="App">
-        <audio src={this.state.audio} autoPlay loop></audio>
         {this.state.start && <Fade startVisisble show={this.state.showTitle} className="title-card">
           <h1>A Snowball's Chance</h1>
           <h2>in</h2>
           <div className="centered hell"><HELL/></div>
         </Fade>}
         {!this.state.start && <div className="disclaimer">This project includes sound</div>}
+        <Fade className="player-display">
+          <PlayerDisplay life={this.state.life} corner={this.state.playerSide}/>
+        </Fade>
         <div className="content">
           <div className="left"></div>
           <div className="center">
@@ -188,12 +208,15 @@ class DialogDisplay extends Component {
     this.setState({ runner: new bondage.Runner() }, () => {
       this.state.runner.load(test);
       this.state.runner.setCommandHandler(command => {
-        let delim = command.split(' ')[0];
-        if (delim === 'image') {
+        let tokens = command.split(' ');
+        if (tokens[0] === 'image') {
           console.log("SET IMAGE")
-        } else if (delim === 'audio') {
+        } else if (tokens[0] === 'audio') {
           console.log("SET AUDIO")
-          this.props.setAudio(command.split(' ')[1])
+          this.props.setAudio(tokens[1])
+        } else if (tokens[0] === 'snowball') {
+          console.log("SET SNOWBALL");
+          this.props.setSnowball(tokens[1])
         }
       });
       this.state.dialog = this.state.runner.run('ThreeNodes');
