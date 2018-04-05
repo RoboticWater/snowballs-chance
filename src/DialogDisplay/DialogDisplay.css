@@ -1,0 +1,10 @@
+.DialogDisplay {
+  opacity: 0;
+  transition: opacity cubic-bezier(.6,.05,.19,.97) 2s;
+  .text {
+    font-size: 20px;
+  }
+  &.show {
+    opacity: 1;
+  }
+}

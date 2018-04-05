@@ -7,9 +7,10 @@ import bondage from 'bondage';
 
 import intro from './resources/sound/intro-timpani.mp3';
 import sunburst from './resources/svg/sunburst.svg';
-import test from './resources/test.json';
 
 import Fade from './Fade';
+import DialogDisplay from './DialogDisplay';
+import PlayerDisplay from './PlayerDisplay';
 
 const startLife = 1000;
 
@@ -18,6 +19,8 @@ const audio_files = {
   amb_office: require('./resources/sound/office_music.mp3'),
 }
 
+const SKIP_THE_BULLSHIT = false;
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -25,10 +28,11 @@ class App extends Component {
       life: startLife,
       dying: false,
       interval: null,
-      playerSide: false,
       start: false,
       showDialog: false,
       showTitle: false,
+      showPlayer: false,
+      cornerPlayer: false,
     }
     this.introSound = new Audio(intro);
     this.audioAmbient = new Audio();
@@ -58,7 +62,19 @@ class App extends Component {
   }
 
   setSnowball(state) {
-    this.setState({ snowball: state });
+    console.log(state)
+    if (state === 'show')
+      this.setState({ showPlayer: true });
+    if (state === 'hide')
+      this.setState({ showPlayer: false });
+    if (state === 'corner')
+      this.setState({ cornerPlayer: true });
+    if (state === 'center')
+      this.setState({ cornerPlayer: false });
+  }
+
+  setTitle(state) {
+    this.setState({ showTitle: state });
   }
 
   componentDidMount() {
@@ -72,13 +88,17 @@ class App extends Component {
   }
 
   begin() {
-    this.introSound.play();
-    this.setState({ start: true, showTitle: true });
-    setTimeout(() => this.setState({ showTitle: false }), 12000);
-    setTimeout(() => this.setState({ showDialog: true }), 15000);
+    if (SKIP_THE_BULLSHIT) {
+      this.setState({ start: true, showDialog: true })
+    } else {
+      this.introSound.play();
+      this.setState({ start: true, showTitle: true });
+      setTimeout(() => this.setState({ showDialog: true }), 12000);
+    }
   }
-// <PlayerDisplay life={this.state.life} corner={this.state.playerSide}/>
+// 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         {this.state.start && <Fade startVisisble show={this.state.showTitle} className="title-card">
@@ -87,17 +107,19 @@ class App extends Component {
           <div className="centered hell"><HELL/></div>
         </Fade>}
         {!this.state.start && <div className="disclaimer">This project includes sound</div>}
-        <Fade className="player-display">
-          <PlayerDisplay life={this.state.life} corner={this.state.playerSide}/>
-        </Fade>
+        <div className={classNames("player-display", {corner: this.state.cornerPlayer})}><Fade show={this.state.showPlayer}>
+          <PlayerDisplay life={this.state.life}/>
+        </Fade></div>
         <div className="content">
           <div className="left"></div>
           <div className="center">
             <div className="image"></div>
-            <div className="dialog-box">
+            <div className={classNames("dialog-box", {small: this.state.showTitle})}>
               {this.state.start && <DialogDisplay
                 show={this.state.showDialog}
                 setAudio={this.setAudio.bind(this)}
+                setSnowball={this.setSnowball.bind(this)}
+                setTitle={this.setTitle.bind(this)}
               />}
             </div>
           </div>
@@ -112,46 +134,9 @@ class App extends Component {
   }
 }
 
-class PlayerDisplay extends Component {
-  constructor(props) {
-    super(props);
-    this.context = null;
-    this.canvas = React.createRef();
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (newProps.life < 1) return;
-    let context = this.canvas.current.getContext('2d');
-    context.save();
-    context.setTransform(1, 0, 0, 1, 0, 0);
-    context.clearRect(0, 0, this.canvas.current.width, this.canvas.current.height);
-    context.restore();
-    
-    // Draw rough shapes
-    let s = newProps.life / startLife;
-    let es = lerp(0.1, 1, s);
-    const rc = rough.canvas(this.canvas.current);
-    let body = svgpath("M40.6,65.8c-16.8,3.4-76.2,4.4-88-1.6C-100.1,37.5-54.1-68.5,2.2-68.5C65.5-68.5,98.6,54.1,40.6,65.8z")
-    let eye_right = svgpath("M-11.1-37.1c0,6.1-4.9,10-11,10s-11-2.9-11-9s6.9-12,13-12S-11.1-43.1-11.1-37.1z")
-    let eye_left = svgpath("M33.5-37.1c0,6.1-4.9,10-11,10s-11-3.9-11-10s2.9-11,9-11S33.5-43.1,33.5-37.1z")
-    rc.path(body.scale(s).translate(100, 100).toString())
-    rc.path(eye_left.scale(es).translate(100, 100).toString(), {'fill': 'black', roughness: 0.7})
-    rc.path(eye_right.scale(es).translate(100, 100).toString(), {fill: 'black', roughness: 0.7})
-  }
-
-  render() {
-    return (
-      <div className={classNames("PlayerDisplay", {corner: this.props.corner})}>
-        <canvas className="player" width="200" height="200" ref={this.canvas}></canvas>
-      </div>
-    );
-  }
-}
-
 class HELL extends Component {
   constructor(props) {
     super(props);
-    this.context = null;
     this.canvas = React.createRef();
   }
 
@@ -191,82 +176,4 @@ class HELL extends Component {
   }
 }
 
-
-class DialogDisplay extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: '',
-      options: [],
-      selector: null,
-      runner: null,
-      dialog: null,
-    }
-  }
-
-  componentDidMount() {
-    this.setState({ runner: new bondage.Runner() }, () => {
-      this.state.runner.load(test);
-      this.state.runner.setCommandHandler(command => {
-        let tokens = command.split(' ');
-        if (tokens[0] === 'image') {
-          console.log("SET IMAGE")
-        } else if (tokens[0] === 'audio') {
-          console.log("SET AUDIO")
-          this.props.setAudio(tokens[1])
-        } else if (tokens[0] === 'snowball') {
-          console.log("SET SNOWBALL");
-          this.props.setSnowball(tokens[1])
-        }
-      });
-      this.state.dialog = this.state.runner.run('ThreeNodes');
-      this.getNext()
-    });
-    
-  }
-
-  getNext(select=null) {
-    let result;
-    if (select !== null) {
-      this.state.selector.select(select)
-    }
-    result = this.state.dialog.next().value;
-    if (result instanceof bondage.TextResult) {
-      this.setState(prev => ({ 
-        text: result.text,
-        selector: null,
-      }));
-    } else if (result instanceof bondage.OptionsResult) {
-      this.setState(prev => ({ 
-        selector: result,
-        options: result.options,
-      }));
-    }
-  }
-
-  renderOptions(options) {
-    return options.map((option, index) => (
-      <button key={index} onClick={() => this.getNext(index)}>{option}</button>
-    ))
-  }
-
-  render() {
-    // console.log(this.state)
-    return (
-      <div className={classNames("DialogDisplay", {show: this.props.show})}>
-        <div className="text" dangerouslySetInnerHTML={{
-          __html: this.state.text 
-        }}></div>
-        {this.state.selector ? 
-          this.renderOptions(this.state.options) : 
-          <button className="next" onClick={() => this.getNext()}>>>>>></button>}
-      </div>
-    );
-  }
-}
-
 export default App;
-
-function lerp(start, end, amt) {
-  return (1-amt)*start+amt*end
-}

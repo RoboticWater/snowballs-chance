@@ -1,0 +1,67 @@
+title: OneNode
+tags: Tag
+colorID: 0
+position: 449,252
+---
+This is a test line
+===
+title: ThreeNodes
+tags: 
+colorID: 0
+position: 449,252
+---
+<i>Begin the game</i>
+<<audio amb_horror>><<title hide>><i>You fall for what seems like an eternity down a swriling vortex of darkness. You don't remember what happened. You don't know where you're going.</i>
+<i>The confusion stars seeping into your mind, churning it over and over. To keep yourself sane, you try to remember yourself.</i>
+<i>But you can't. You don't know your name, where you're from, anything.</i>
+<<snowball show>><i>Save for this: you are a snowball.</i>
+<<snowball corner>><i>And then it all stops.</i>
+<i>You hear...</i>
+<<audio amb_office>><i>Elevator music?</i>
+[[Hello|Option1]]
+[[Option2]]
+===
+title: Option1
+tags: 
+colorID: 0
+position: 770,84
+---
+<<audio amb_office>>This is Option1's test line
+===
+title: Option2
+tags: 
+colorID: 0
+position: 774,404
+---
+This is Option2's test line
+===
+title: NamedLink
+tags: 
+colorID: 0
+position: 774,404
+---
+This is a test line
+This is another test line
+[[First choice|Option1]]
+[[Second choice|Option2]]
+===
+title: OneLinkPassthrough
+tags: 
+colorID: 0
+position: 774,404
+---
+First test line
+[[Option1]]
+===
+title: LinkAfterShortcuts
+tags: 
+colorID: 0
+position: 774,404
+---
+First test line
+-> Shortcut 1
+	This is the first shortcut
+-> Shortcut 2
+	This is the second shortcut
+[[First link|Option1]][[Second link|Option2]]
+===

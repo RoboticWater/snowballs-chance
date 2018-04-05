@@ -80,11 +80,15 @@ body {
 
 .PlayerDisplay {
   /* animation: 3.7s linear 0s 1 appear; */
+  
+}
+
+.player-display {
   position: fixed;
   bottom: 40%;
   left: 50%;
   transform: translate(-50%, 50%);
-  transition: transform 0.5s linear, left 1s cubic-bezier(.6,.05,.19,.97), bottom 1s cubic-bezier(.6,.05,.19,.97) ;
+  transition: transform 2s linear, left 2s cubic-bezier(.6,.05,.19,.97), bottom 2s cubic-bezier(.6,.05,.19,.97);
   &.corner {
     left: 0;
     bottom: 0;
@@ -101,10 +105,15 @@ body {
   display: flex;
   flex-flow: column;
   .image {
+    /* transition: flex 0.5s cubic-bezier(.6,.05,.19,.97); */
     flex: 1 1 0;
   }
   .dialog-box {
+    transition: flex 1.2s cubic-bezier(.6,.05,.19,.97);
     flex: 0 0 55%;
+    &.small {
+      flex: 0 0 40%;
+    }
   }
 }
 
@@ -154,15 +163,4 @@ body {
 @keyframes sunburst {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-.DialogDisplay {
-  opacity: 0;
-  transition: opacity cubic-bezier(.6,.05,.19,.97) 2s;
-  .text {
-    font-size: 20px;
-  }
-  &.show {
-    opacity: 1;
-  }
 }

@@ -1088,14 +1088,6 @@ body-parser@1.18.2:
     raw-body "2.3.2"
     type-is "~1.6.15"
 
-bondage@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/bondage/-/bondage-1.0.3.tgz#8010e70c6781193346a0c963559c2cec021208ab"
-  dependencies:
-    commander "^2.9.0"
-    inquirer "^3.0.6"
-    jison "^0.4.17"
-
 "bondage@https://github.com/jhayley/bondage.js#0b1fac2e2f289781b78bb85ec0f274fc4ad0a659":
   version "1.0.3"
   resolved "https://github.com/jhayley/bondage.js#0b1fac2e2f289781b78bb85ec0f274fc4ad0a659"
