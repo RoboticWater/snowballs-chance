@@ -21,8 +21,9 @@ position: 0,0
 <i>...</i>
 <i>But then you hear something...</i>
 <i>It's...</i>
-<<audio amb_office>><<snowball corner>>
+<<audio amb_office>>
 <i>Elevator music?</i>
+<<snowball corner>>
 [[Office0]]
 ===
 title: Office0
