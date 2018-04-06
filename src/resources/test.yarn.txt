@@ -1,72 +1,119 @@
-title: OneNode
-tags: Tag
-colorID: 0
-position: 449,252
----
-This is a test line
-===
-title: ThreeNodes
+title: Start
 tags: 
 colorID: 0
-position: 449,252
+position: 0,0
 ---
-<i>Begin the game</i>
+<i>Click the arrow to proceed</i>
 <<audio amb_horror>><<title hide>><i>You fall for what seems like an eternity down a swriling vortex of darkness. You don't remember what happened. You don't know where you're going.</i>
-<i>The confusion starts seeping into your mind, churning it over and over. To keep yourself sane, you try to remember.</i>
+<i>The confusion starts seeping into your mind, churning over and over. Grasping at the threads of your slowly unraveling sanity, you try to remember.</i>
 <i>You try to remember yourself.</i>
+<i>Your home.</i>
+<i>Friends?</i>
 <i>Anything.</i>
-<i>But you can't. You don't know your name, where you're from.</i>
-<i>But you do know this:</i>
+<i>But you can't.</i>
+<i>Everything's fluttered away.</i>
+<i>Except for one, solitary idea...</i>
 <<snowball show>>
 <i>You are a snowball.</i>
-<<snowball corner>><i>And then it all stops.</i>
-<i>You hear...</i>
+<i>You cherish the thought with every part of you that still remains, because it's the only thing you have left.</i>
+<i>And then it all stops.</i>
+<<audio none>><i>Silence.</i>
+<i>...</i>
+<i>But then you hear something...</i>
+<i>It's...</i>
+<<audio amb_office>><<snowball corner>>
 <i>Elevator music?</i>
-<<audio amb_office>>
-[[Hello|Option1]]
-[[Option2]]
+[[Office0]]
 ===
-title: Option1
+title: Office0
 tags: 
 colorID: 0
-position: 770,84
+position: 300,0
 ---
-<<audio amb_office>>This is Option1's test line
+<<background office>><i>You seem to be in an office.</i>
+<<image devil>><i>The small office is standard; white walls, dust-free furniture, a potted plant. You don’t know how you got here. Neither does the horned office worker in front of you, typing away at the only desk. You see red high-heels peek out below the desk, and an arrow-tipped tail occasionally flicks into sight. It takes a while before the weary worker notices you.</i> Hm? Another deceased? Call me The Devil. I am the proprietor of this plane of perpetual suffering known as Hell. My favourite form of sleep is REM sleep. I’ve been so busy that I’ve hardly slept...not enough manpower...I want to sleep!
+[[Office1]]
 ===
-title: Option2
+title: Office1
 tags: 
 colorID: 0
-position: 774,404
+position: 600,0
 ---
-This is Option2's test line
+Still here? My office is Limbo, but outside is Hell. You may leave at any time. Given your <em>particular</em> constitution, however, you might not last very long....
+[[<i>Leave the office</i>|LeaveOffice]]
+[[Um, hello?|DevilHello]]
 ===
-title: NamedLink
+title: DevilHello
 tags: 
 colorID: 0
-position: 774,404
+position: 600,300
 ---
-This is a test line
-This is another test line
-[[First choice|Option1]]
-[[Second choice|Option2]]
+...I said florals, Karen! Oh, just a dream. Where was I?
+I <em>say</em> I rule Hell, but I really just lease the space. My full-time work is in the fashion industry. Like my shoes? They’re Prada. I like them almost as much as I like sleep.
+[[<i>Leave the office</i>|LeaveOffice]]
+[[I prefer Gucci|DevilGucci]]
 ===
-title: OneLinkPassthrough
+title: DevilGucci
 tags: 
 colorID: 0
-position: 774,404
+position: 600,600
 ---
-First test line
-[[Option1]]
+They’re fine too. I monopolise both Prada and Gucci, you know, to fool the populace about the true political landscape of the fashion industry. The stock price for Gucci even recently went up 0.02%.... <i>The Devil starts snoring.</i>
+[[What about the stock prices?|StockPrices0]]
+[[<i>Do nothing</i>|DoNothing]]
+[[<i>Leave the office</i>|LeaveOffice]]
 ===
-title: LinkAfterShortcuts
+title: LeaveOffice
 tags: 
 colorID: 0
-position: 774,404
+position: 900,0
 ---
-First test line
--> Shortcut 1
-	This is the first shortcut
--> Shortcut 2
-	This is the second shortcut
-[[First link|Option1]][[Second link|Option2]]
+<i>You roll your way over to the exit.</i>
+<i>The Devil was on to something. Besides, too much work.</i>
+<i>You consist entirely of snow. If you let yourself melt completely before you can find an exit, you will certainly die in Hell.</i>
+[[<i>Press onward</i>|Outside0]]
+[[<i>Step back in.</i>|Office1]]
+===
+title: StockPrices0
+tags: 
+colorID: 0
+position: 300,600
+---
+<i>The Devil keeps snoring.</i>
+[[WHAT ABOUT THE STOCK PRICES!|StockPrices1]]
+[[<i>Leave the office</i>|LeaveOffice]]
+===
+title: StockPrices1
+tags: 
+colorID: 0
+position: 300,900
+---
+<i>The Devil keeps snoring.<br>You wish you could die from boredom. Boy howdy is the Devil boring.</i>
+[[WHAT. ABOUT. THE. STOCK. PRICES.|StockPrices2]]
+[[<i>Leave the office</i>|LeaveOffice]]
+===
+title: StockPrices2
+tags: 
+colorID: 0
+position: 300,1200
+---
+Forty-two! Oh, stocks? Want a share? I can lend you some if you fill out some paperwork whose words run together like ants because I tried saving paper by using small font. First, print your name here....
+<i>Why have you done this to yourself, you are now forever stuck in front of paperwork, and because you’re in Limbo, you actually have eternity to fill it out. No wonder the Devil tried saving paper by using small font. There are a lot of words. You spend eternity in boredom, wondering if your time could be more meaningful.</i>
+<<endgame>>
+===
+title: DoNothing
+tags: 
+colorID: 0
+position: 900,600
+---
+<i>You do nothing. It's arguably better than melting to death.</i>
+[[<i>Continue to do nothing</i>|DoNothing]]
+[[<i>Leave the office</i>|LeaveOffice]]
+===
+title: Outside0
+tags: 
+colorID: 0
+position: 1200,0
+---
+
 ===

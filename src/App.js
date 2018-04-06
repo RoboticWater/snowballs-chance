@@ -21,6 +21,10 @@ const audio_files = {
 
 const SKIP_THE_BULLSHIT = false;
 
+function lerp(start, end, amt) {
+  return (1-amt)*start+amt*end
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -38,6 +42,7 @@ class App extends Component {
     this.audioAmbient = new Audio();
     this.audioAmbient.autoplay = true;
     this.audioAmbient.loop = true;
+    this.audioAmbient.volume = 0;
   }
 
   changeLife() {
@@ -50,13 +55,23 @@ class App extends Component {
       this.audioAmbient.src = audio_files[file];
       this.audioAmbient.volume = 1;
     } else {
+      var fadeInAudio;
       var switchAudio = setInterval(() => {
-        if (this.audioAmbient.volume - 0.2 <= 0) {
+        if (this.audioAmbient.volume <= 0.05) {
+          this.audioAmbient.volume = 0;
           this.audioAmbient.src = audio_files[file];
-          this.audioAmbient.volume = 1;
-          clearInterval(switchAudio)
+          fadeInAudio = setInterval(() => {
+            if (this.audioAmbient.volume >= 0.95) {
+              this.audioAmbient.volume = 1;
+              clearInterval(fadeInAudio)
+            } else {
+              this.audioAmbient.volume = lerp(this.audioAmbient.volume, 1, 0.25);
+            }
+          }, 100);
+          clearInterval(switchAudio);
+        } else {
+          this.audioAmbient.volume = lerp(this.audioAmbient.volume, 0, 0.25);
         }
-        this.audioAmbient.volume -= 0.2;
       }, 100);
     }
   }
@@ -98,7 +113,6 @@ class App extends Component {
   }
 // 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         {this.state.start && <Fade startVisisble show={this.state.showTitle} className="title-card">
@@ -107,7 +121,7 @@ class App extends Component {
           <div className="centered hell"><HELL/></div>
         </Fade>}
         {!this.state.start && <div className="disclaimer">This project includes sound</div>}
-        <div className={classNames("player-display", {corner: this.state.cornerPlayer})}><Fade show={this.state.showPlayer}>
+        <div className={classNames("player-display", {corner: this.state.cornerPlayer})}><Fade show={this.state.showPlayer} speed="4s ease">
           <PlayerDisplay life={this.state.life}/>
         </Fade></div>
         <div className="content">

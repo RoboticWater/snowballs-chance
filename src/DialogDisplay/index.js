@@ -25,6 +25,8 @@ export default class DialogDisplay extends Component {
         let tokens = command.split(' ');
         if (tokens[0] === 'image') {
           console.log("SET IMAGE")
+        } else if (tokens[0] === 'background') {
+          console.log("SET BACKGROUND")
         } else if (tokens[0] === 'audio') {
           console.log("SET AUDIO")
           this.props.setAudio(tokens[1])
@@ -36,7 +38,7 @@ export default class DialogDisplay extends Component {
           this.props.setTitle(tokens[1] === 'show' ? true : false)
         }
       });
-      this.state.dialog = this.state.runner.run('ThreeNodes');
+      this.state.dialog = this.state.runner.run('Start');
       this.getNext()
     });
     
@@ -63,8 +65,8 @@ export default class DialogDisplay extends Component {
 
   renderOptions(options) {
     return this.state.selector ? 
-      options.map((option, index) => (<div key={index} className="option" onClick={() => this.getNext(index)}>{option}</div>)) :
-      (<div className="option" onClick={() => this.getNext()}>>>>>></div>)
+      options.map((option, index) => (<div key={index} className="option" onClick={() => this.getNext(index)} dangerouslySetInnerHTML={{__html: option}}></div>)) :
+      (<div className="option" onClick={() => this.getNext()}>&#8594;</div>)
   }
 
   render() {

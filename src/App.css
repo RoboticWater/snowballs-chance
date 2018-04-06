@@ -5,7 +5,7 @@
   font-weight: normal;
   font-style: normal;
 }
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,600,600i');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond:500,500i,600,600i');
 
 $black: #424242;
 $white: #FaFaF8;
@@ -110,7 +110,7 @@ body {
   }
   .dialog-box {
     transition: flex 1.2s cubic-bezier(.6,.05,.19,.97);
-    flex: 0 0 55%;
+    flex: 0 0 65%;
     border-top: 2px dotted #44222222;
     &.small {
       flex: 0 0 40%;

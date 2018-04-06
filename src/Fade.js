@@ -27,8 +27,9 @@ class Fade extends Component {
   }
 
   render() {
+    const speed = this.props.speed ? this.props.speed : 'cubic-bezier(.6,.05,.19,.97) 0.75s'
   	return this.state.gone ? null : (
-			<div className={classNames("Fade", this.props.className, {show: this.state.show})}>
+			<div className={classNames("Fade", this.props.className, {show: this.state.show})} style={{transition: 'opacity ' + speed}}>
 				{this.props.children}
 			</div>
 		)

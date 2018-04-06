@@ -1,0 +1,52 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "<i>Begin the game</i>\n<<audio amb_horror>><<title hide>><i>You fall for what seems like an eternity down a swriling vortex of darkness. You don't remember what happened. You don't know where you're going.</i>\n<i>The confusion starts seeping into your mind, churning over and over. Grasping at the threads of your slowly unraveling sanity, you try to remember.</i>\n<i>You try to remember yourself.</i>\n<i>Your home.</i>\n<i>Friends?</i>\n<i>Anything.</i>\n<i>But you can't.</i>\n<i>Everything's fluttered away.</i>\n<i>Except for one, solitary idea...</i>\n<<snowball show>>\n<i>You are a snowball.</i>\n<i>You cherish the thought with every part of you that still remains, because it's the only thing you have left.</i>\n<<snowball corner>><i>And then it all stops.</i>\n<i>Silence.</i>\n<i>But then you hear something...</i>\n<i>It's...</i>\n<i>Elevator music?</i>\n<<audio amb_office>>\n[[Office0]]\n",
+		"position": {
+			"x": 0,
+			"y": 0
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Office0",
+		"tags": "",
+		"body": "<<background office>><i>You seem to be in an office.</i>\n<<image devil>><i>The small office is standard; white walls, dust-free furniture, a potted plant. You don’t know how you got here. Neither does the horned office worker in front of you, typing away at the only desk. You see red high-heels peek out below the desk, and an arrow-tipped tail occasionally flicks into sight. It takes a while before the weary worker notices you.</i> Hm? Another deceased? Call me The Devil. I am the proprietor of this plane of perpetual suffering known as Hell. My favourite form of sleep is REM sleep. I’ve been so busy that I’ve hardly slept...not enough manpower...I want to sleep!\nStill here? My office is Limbo, but outside is Hell. You may leave at any time. Given your <em>particular</em> constitution, however, you might not last very long....\n->Uh, hello?\n\t...I said florals, Karen! Oh, just a dream. Where was I?\n\tI say I rule Hell, but I really just lease the space. My full-time work is in the fashion industry. Like my shoes? They’re Prada. I like them almost as much as I like sleep.\n\t-> I prefer Gucci\n\t\tThey’re fine too. I monopolise both Prada and Gucci, you know, to fool the populace about the true political landscape of the fashion industry. The stock price for Gucci even recently went up 0.02%.... <i>The Devil starts snoring.</i>\n\t\t[[What about the stock prices?|StockPrices]]\n\t\t[[<i>Do nothing</i>|DoNothing]]\n\t\t[[<i>Leave the office</i>|LeaveOffice]]\n\t[[<i>Leave the office</i>|LeaveOffice]]\n[[<i>Leave the office</i>|leaveOffice]]\n",
+		"position": {
+			"x": 300,
+			"y": 0
+		},
+		"colorID": 0
+	},
+	{
+		"title": "LeaveOffice",
+		"tags": "",
+		"body": "\n",
+		"position": {
+			"x": 600,
+			"y": 300
+		},
+		"colorID": 0
+	},
+	{
+		"title": "StockPrices",
+		"tags": "",
+		"body": "\n",
+		"position": {
+			"x": 300,
+			"y": 300
+		},
+		"colorID": 0
+	},
+	{
+		"title": "DoNothing",
+		"tags": "",
+		"body": "\n",
+		"position": {
+			"x": 600,
+			"y": 0
+		},
+		"colorID": 0
+	}
+]
