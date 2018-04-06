@@ -114,14 +114,14 @@ class App extends Component {
           <div className="left"></div>
           <div className="center">
             <div className="image"></div>
-            <div className={classNames("dialog-box", {small: this.state.showTitle})}>
-              {this.state.start && <DialogDisplay
+            {this.state.start && <div className={classNames("dialog-box", {small: this.state.showTitle})}>
+               <DialogDisplay
                 show={this.state.showDialog}
                 setAudio={this.setAudio.bind(this)}
                 setSnowball={this.setSnowball.bind(this)}
                 setTitle={this.setTitle.bind(this)}
-              />}
-            </div>
+              />
+            </div>}
           </div>
           <div className="right"></div>
         </div>

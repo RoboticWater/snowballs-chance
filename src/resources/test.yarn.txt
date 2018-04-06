@@ -12,12 +12,17 @@ position: 449,252
 ---
 <i>Begin the game</i>
 <<audio amb_horror>><<title hide>><i>You fall for what seems like an eternity down a swriling vortex of darkness. You don't remember what happened. You don't know where you're going.</i>
-<i>The confusion stars seeping into your mind, churning it over and over. To keep yourself sane, you try to remember yourself.</i>
-<i>But you can't. You don't know your name, where you're from, anything.</i>
-<<snowball show>><i>Save for this: you are a snowball.</i>
+<i>The confusion starts seeping into your mind, churning it over and over. To keep yourself sane, you try to remember.</i>
+<i>You try to remember yourself.</i>
+<i>Anything.</i>
+<i>But you can't. You don't know your name, where you're from.</i>
+<i>But you do know this:</i>
+<<snowball show>>
+<i>You are a snowball.</i>
 <<snowball corner>><i>And then it all stops.</i>
 <i>You hear...</i>
-<<audio amb_office>><i>Elevator music?</i>
+<i>Elevator music?</i>
+<<audio amb_office>>
 [[Hello|Option1]]
 [[Option2]]
 ===

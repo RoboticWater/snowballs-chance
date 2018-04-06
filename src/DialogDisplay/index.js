@@ -62,21 +62,19 @@ export default class DialogDisplay extends Component {
   }
 
   renderOptions(options) {
-    return options.map((option, index) => (
-      <button key={index} onClick={() => this.getNext(index)}>{option}</button>
-    ))
+    return this.state.selector ? 
+      options.map((option, index) => (<div key={index} className="option" onClick={() => this.getNext(index)}>{option}</div>)) :
+      (<div className="option" onClick={() => this.getNext()}>>>>>></div>)
   }
 
   render() {
     // console.log(this.state)
     return (
       <div className={classNames("DialogDisplay", {show: this.props.show})}>
-        <div className="text" dangerouslySetInnerHTML={{
-          __html: this.state.text 
-        }}></div>
-        {this.state.selector ? 
-          this.renderOptions(this.state.options) : 
-          <button className="next" onClick={() => this.getNext()}>>>>>></button>}
+        <div className="text" dangerouslySetInnerHTML={{__html: this.state.text}}></div>
+        <div className="options">
+          {this.renderOptions(this.state.options)}
+        </div>
       </div>
     );
   }

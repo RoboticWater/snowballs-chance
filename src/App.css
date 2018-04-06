@@ -111,6 +111,7 @@ body {
   .dialog-box {
     transition: flex 1.2s cubic-bezier(.6,.05,.19,.97);
     flex: 0 0 55%;
+    border-top: 2px dotted #44222222;
     &.small {
       flex: 0 0 40%;
     }
