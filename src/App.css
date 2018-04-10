@@ -7,7 +7,7 @@
 }
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond:500,500i,600,600i');
 
-$black: #424242;
+$black: #5d5555;
 $white: #FaFaF8;
 body {
   background: $white;
@@ -21,6 +21,8 @@ body {
   width: 100vw;
   height: 100vh;
   justify-content: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 .begin {
@@ -134,6 +136,12 @@ body {
   left: 50%;
   position: fixed;
   transform: translate(-50%, -50%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  pointer-events: none;
   h1 {
     font-size: 50px;
     margin: 0;

@@ -22,7 +22,7 @@
 	{
 		"title": "Office1",
 		"tags": "",
-		"body": "Still here? My office is Limbo, but outside is Hell. You may leave at any time. Given your <em>particular</em> constitution, however, you might not last very long....\n[[<i>Leave the office</i>|LeaveOffice]]\n[[Um, hello?|DevilHello]]\n",
+		"body": "Still here? My office is Limbo, but outside is Hell. You may leave at any time. Given your <em>particular</em> constitution, however, you might not last very long....\n[[Um, hello?|DevilHello]]\n[[<i>Leave the office</i>|LeaveOffice]]\n",
 		"position": {
 			"x": 600,
 			"y": 0
@@ -32,7 +32,7 @@
 	{
 		"title": "DevilHello",
 		"tags": "",
-		"body": "...I said florals, Karen! Oh, just a dream. Where was I?\nI <em>say</em> I rule Hell, but I really just lease the space. My full-time work is in the fashion industry. Like my shoes? They’re Prada. I like them almost as much as I like sleep.\n[[<i>Leave the office</i>|LeaveOffice]]\n[[I prefer Gucci|DevilGucci]]\n",
+		"body": "...I said florals, Karen! Oh, just a dream. Where was I?\nI <em>say</em> I rule Hell, but I really just lease the space. My full-time work is in the fashion industry. Like my shoes? They’re Prada. I like them almost as much as I like sleep.\n[[I prefer Gucci|DevilGucci]]\n[[<i>Leave the office</i>|LeaveOffice]]\n",
 		"position": {
 			"x": 600,
 			"y": 300

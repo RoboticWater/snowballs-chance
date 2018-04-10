@@ -19,6 +19,10 @@ const audio_files = {
   amb_office: require('./resources/sound/office_music.mp3'),
 }
 
+const background_files = {
+  'cave': require('./resources/images/cave.png')
+}
+
 const SKIP_THE_BULLSHIT = false;
 
 function lerp(start, end, amt) {
@@ -114,7 +118,7 @@ class App extends Component {
 // 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{backgroundImage: 'url(' + background_files["cave"] + ')'}}>
         {this.state.start && <Fade startVisisble show={this.state.showTitle} className="title-card">
           <h1>A Snowball's Chance</h1>
           <h2>in</h2>
