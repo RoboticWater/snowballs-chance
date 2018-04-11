@@ -9,11 +9,13 @@
     opacity: 1;
   }
   .options {
-  	background: #4422220a;
+    background: #F3F1EF;
+  	/* background: #4422220a; */
   	/* text-align: right; */
   	margin: 10px 30px 60px 30px;
   	padding: 5px 15px;
   	flex: 0 0 140px;
+    z-index: 90;
   	.option {
   		cursor: pointer;
   		font-weight: 600;

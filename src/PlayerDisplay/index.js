@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import svgpath from 'svgpath';
 import rough from 'roughjs';
 
+import './PlayerDisplay.css'
+
 const startLife = 1000;
 
 export default class PlayerDisplay extends Component {

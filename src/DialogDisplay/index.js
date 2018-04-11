@@ -30,6 +30,7 @@ export default class DialogDisplay extends Component {
           console.log("SET IMAGE")
         } else if (tokens[0] === 'background') {
           console.log("SET BACKGROUND")
+          this.props.setBackground(tokens[1])
         } else if (tokens[0] === 'audio') {
           console.log("SET AUDIO")
           this.props.setAudio(tokens[1])
@@ -77,7 +78,6 @@ export default class DialogDisplay extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className={classNames("DialogDisplay", {show: this.props.show})}>
         <div 

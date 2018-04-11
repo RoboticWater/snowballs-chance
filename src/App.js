@@ -20,10 +20,11 @@ const audio_files = {
 }
 
 const background_files = {
-  'cave': require('./resources/images/cave.png')
+  'cave': require('./resources/images/cave.png'),
+  'office': require('./resources/images/office.png')
 }
 
-const SKIP_THE_BULLSHIT = false;
+const SKIP_THE_BULLSHIT = true;
 
 function lerp(start, end, amt) {
   return (1-amt)*start+amt*end
@@ -41,6 +42,7 @@ class App extends Component {
       showTitle: false,
       showPlayer: false,
       cornerPlayer: false,
+      background: 'cave',
     }
     this.introSound = new Audio(intro);
     this.audioAmbient = new Audio();
@@ -96,6 +98,10 @@ class App extends Component {
     this.setState({ showTitle: state });
   }
 
+  setBackground(state) {
+    this.setState({ background: state })
+  }
+
   componentDidMount() {
     let interval = setInterval(this.changeLife.bind(this), 100);
     this.setState({ interval: interval });
@@ -112,13 +118,13 @@ class App extends Component {
     } else {
       this.introSound.play();
       this.setState({ start: true, showTitle: true });
-      setTimeout(() => this.setState({ showDialog: true }), 12000);
+      setTimeout(() => this.setState({ showDialog: true }), 9000);
     }
   }
 // 
   render() {
     return (
-      <div className="App" style={{backgroundImage: 'url(' + background_files["cave"] + ')'}}>
+      <div className="App" style={{backgroundImage: 'url(' + background_files[this.state.background] + ')'}}>
         {this.state.start && <Fade startVisisble show={this.state.showTitle} className="title-card">
           <h1>A Snowball's Chance</h1>
           <h2>in</h2>
@@ -138,6 +144,7 @@ class App extends Component {
                 setAudio={this.setAudio.bind(this)}
                 setSnowball={this.setSnowball.bind(this)}
                 setTitle={this.setTitle.bind(this)}
+                setBackground={this.setBackground.bind(this)}
               />
             </div>}
           </div>
@@ -147,6 +154,7 @@ class App extends Component {
           <img src={sunburst} alt=""/>
           <div className="button" onClick={() => this.begin()}>Begin</div>
         </div>}
+        <div className="vignette"></div>
       </div>
     );
   }
