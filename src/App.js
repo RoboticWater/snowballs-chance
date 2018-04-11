@@ -24,7 +24,7 @@ const background_files = {
   'office': require('./resources/images/office.png')
 }
 
-const SKIP_THE_BULLSHIT = true;
+const SKIP_THE_BULLSHIT = false;
 
 function lerp(start, end, amt) {
   return (1-amt)*start+amt*end
