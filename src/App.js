@@ -20,8 +20,13 @@ const audio_files = {
 }
 
 const background_files = {
-  'cave': require('./resources/images/cave.png'),
-  'office': require('./resources/images/office.png')
+  'cave': require('./resources/images/background/cave.png'),
+  'office': require('./resources/images/background/office.png')
+}
+
+const image_files = {
+  'devil': require('./resources/images/character/devil.png'),
+  'sis': require('./resources/images/character/sis.png')
 }
 
 const SKIP_THE_BULLSHIT = false;
@@ -43,6 +48,7 @@ class App extends Component {
       showPlayer: false,
       cornerPlayer: false,
       background: 'cave',
+      image: '',
     }
     this.introSound = new Audio(intro);
     this.audioAmbient = new Audio();
@@ -102,6 +108,10 @@ class App extends Component {
     this.setState({ background: state })
   }
 
+  setImage(state) {
+    this.setState({ image: state })
+  }
+
   componentDidMount() {
     let interval = setInterval(this.changeLife.bind(this), 100);
     this.setState({ interval: interval });
@@ -137,7 +147,7 @@ class App extends Component {
         <div className="content">
           <div className="left"></div>
           <div className="center">
-            <div className="image"></div>
+            <div className="image" style={{backgroundImage: 'url(' + image_files[this.state.image] + ')'}}></div>
             {this.state.start && <div className={classNames("dialog-box", {small: this.state.showTitle})}>
                <DialogDisplay
                 show={this.state.showDialog}
@@ -145,6 +155,7 @@ class App extends Component {
                 setSnowball={this.setSnowball.bind(this)}
                 setTitle={this.setTitle.bind(this)}
                 setBackground={this.setBackground.bind(this)}
+                setImage={this.setImage.bind(this)}
               />
             </div>}
           </div>

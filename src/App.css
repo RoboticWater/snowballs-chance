@@ -35,7 +35,8 @@ body {
   /* background-repeat: no-repeat; */
   background-size: no-repeat center center fixed; 
   background-size: cover;
-  background-position: center; 
+  background-position: center;
+  transition: background-image 1s ease-in-out;
 }
 
 .begin {
@@ -122,6 +123,9 @@ body {
   .image {
     /* transition: flex 0.5s cubic-bezier(.6,.05,.19,.97); */
     flex: 1 1 0;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
   }
   .dialog-box {
     transition: flex 1.2s cubic-bezier(.6,.05,.19,.97);

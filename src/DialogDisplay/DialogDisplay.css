@@ -4,7 +4,7 @@
 	display: flex;
 	flex-flow: column;
 	height: 100%;
-  font-size: 22px;
+  font-size: 20px;
   &.show {
     opacity: 1;
   }
@@ -66,6 +66,8 @@
     position: relative;
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(.6,.05,.19,.97);
+    /* background: #FaFaF8;
+    box-shadow: 0 0 20px 20px #FaFaF8; */
     i {
     	color: #4a333370;
     }

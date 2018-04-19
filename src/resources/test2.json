@@ -102,7 +102,7 @@
 	{
 		"title": "Outside0",
 		"tags": "",
-		"body": "\n",
+		"body": "<<image sis>><<background cave>><i>His irritation recedes a little.</i> I don't know how many times I've rolled this boulder, yet every time I do, there always seems to be some little nook I've never seen before. <i>He sounds almost sentimental.</i> Amazing, isn't it?\n[[Maybe you're just senile|SisBoulderSenile]]\n[[Isn't it excruciating to keep rolling this boulder?|SisBoulder3]]\n[[I suppose so|SisBoulderInteresting0]]\n",
 		"position": {
 			"x": 1200,
 			"y": 0

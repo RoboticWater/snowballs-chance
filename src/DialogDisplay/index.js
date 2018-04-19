@@ -28,6 +28,7 @@ export default class DialogDisplay extends Component {
         let tokens = command.split(' ');
         if (tokens[0] === 'image') {
           console.log("SET IMAGE")
+          this.props.setImage(tokens[1])
         } else if (tokens[0] === 'background') {
           console.log("SET BACKGROUND")
           this.props.setBackground(tokens[1])
