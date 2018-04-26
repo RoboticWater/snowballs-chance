@@ -30,12 +30,13 @@ export default class PlayerDisplay extends Component {
     rc.path(eye_right.scale(es).translate(100, 100).toString(), {fill: 'black', roughness: 0.7, stroke: '#424242'})
   }
 
-  componentDidMount() {
-    let interval = setInterval(this.update.bind(this), 100);
-    this.setState({ interval: interval });
-  }
+  // componentDidMount() {
+  //   let interval = setInterval(this.update.bind(this), 100);
+  //   this.setState({ interval: interval });
+  // }
 
   render() {
+    this.update();
     return (
       <div className={classNames("PlayerDisplay")}>
         <canvas className="player" width="200" height="200" ref={this.player_canvas}></canvas>

@@ -46,8 +46,8 @@ class App extends Component {
   }
 
   changeLife() {
-    // if (this.state.dying) this.setState(prev => ({ life: prev.life - 1 }));
-    // else this.setState(prev => ({ life: prev.life + 2 * (prev.life % 2 - 0.5) }));
+    if (this.state.dying) this.setState(prev => ({ life: prev.life - 1 }));
+    else this.setState(prev => ({ life: prev.life + 2 * (prev.life % 2 - 0.5) }));
   }
 
   setAudio(file) {
@@ -80,12 +80,16 @@ class App extends Component {
     console.log(state)
     if (state === 'show')
       this.setState({ showPlayer: true });
-    if (state === 'hide')
+    else if (state === 'hide')
       this.setState({ showPlayer: false });
-    if (state === 'corner')
+    else if (state === 'corner')
       this.setState({ cornerPlayer: true });
-    if (state === 'center')
+    else if (state === 'center')
       this.setState({ cornerPlayer: false });
+    else if (state === 'melting')
+      this.setState({ dying: true });
+    else if (state === 'cold')
+      this.setState({ dying: false });
   }
 
   setTitle(state) {
