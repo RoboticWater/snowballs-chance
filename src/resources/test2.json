@@ -2,7 +2,7 @@
 	{
 		"title": "Start",
 		"tags": "",
-		"body": "<i>Click the arrow to proceed</i>\n<<audio amb_horror>><<title hide>><i>You fall for what seems like an eternity down a swriling vortex of darkness. You don't remember what happened. You don't know where you're going.</i>\n<i>The confusion starts seeping into your mind, churning over and over. Grasping at the threads of your slowly unraveling sanity, you try to remember.</i>\n<i>You try to remember yourself.</i>\n<i>Your home.</i>\n<i>Friends?</i>\n<i>Anything.</i>\n<i>But you can't.</i>\n<i>Everything's fluttered away.</i>\n<i>Except for one, solitary idea...</i>\n<<snowball show>>\n<i>You are a snowball.</i>\n<i>You cherish the thought with every part of you that still remains, because it's the only thing you have left.</i>\n<i>And then it all stops.</i>\n<<audio none>><i>Silence.</i>\n<i>...</i>\n<i>But then you hear something...</i>\n<i>It's...</i>\n<<audio amb_office>>\n<i>Elevator music?</i>\n<<snowball corner>>\n[[Office0]]\n",
+		"body": "<i>Click the arrow to proceed</i>\n<<audio amb_horror>><<title hide>><i>You fall for what seems like an eternity down a swriling vortex of darkness. You don't remember what happened. You don't know where you're going.</i>\n<i>The confusion starts seeping into your mind, churning over and over. Grasping at the threads of your slowly unraveling sanity, you try to remember.</i>\n<i>You try to remember yourself.</i>\n<i>Your home.</i>\n<i>Friends?</i>\n<i>Anything.</i>\n<i>But you can't.</i>\n<i>Everything's fluttered away.</i>\n<i>Except for one, solitary idea...</i>\n<<snowball show>>\n<i>You are a snowball.</i>\n<i>You cherish the thought with every part of you that still remains, because it's the only thing you have left.</i>\n<i>And then it all stops.</i>\n<<audio none>><i>Silence.</i>\n<i>...</i>\n<i>But then you hear something...</i>\n<i>It's...</i>\n<<audio amb_office>>\n<i>Elevator music?</i>\n<<snowball corner>><<background office>>\n[[Office0]]\n",
 		"position": {
 			"x": 0,
 			"y": 0
@@ -22,7 +22,7 @@
 	{
 		"title": "Office1",
 		"tags": "",
-		"body": "Still here? My office is Limbo, but outside is Hell. You may leave at any time. Given your <em>particular</em> constitution, however, you might not last very long....\n[[<i>Leave the office</i>|LeaveOffice]]\n[[Um, hello?|DevilHello]]\n",
+		"body": "Still here? My office is Limbo, but outside is Hell. You may leave at any time. Given your <em>particular</em> constitution, however, you might not last very long....\n[[Um, hello?|DevilHello]]\n[[<i>Leave the office</i>|LeaveOffice]]\n",
 		"position": {
 			"x": 600,
 			"y": 0
@@ -32,7 +32,7 @@
 	{
 		"title": "DevilHello",
 		"tags": "",
-		"body": "...I said florals, Karen! Oh, just a dream. Where was I?\nI <em>say</em> I rule Hell, but I really just lease the space. My full-time work is in the fashion industry. Like my shoes? They’re Prada. I like them almost as much as I like sleep.\n[[<i>Leave the office</i>|LeaveOffice]]\n[[I prefer Gucci|DevilGucci]]\n",
+		"body": "...I said florals, Karen! Oh, just a dream. Where was I?\nI <em>say</em> I rule Hell, but I really just lease the space. My full-time work is in the fashion industry. Like my shoes? They’re Prada. I like them almost as much as I like sleep.\n[[I prefer Gucci|DevilGucci]]\n[[<i>Leave the office</i>|LeaveOffice]]\n",
 		"position": {
 			"x": 600,
 			"y": 300
@@ -102,7 +102,7 @@
 	{
 		"title": "Outside0",
 		"tags": "",
-		"body": "\n",
+		"body": "<<image sis>><<background cave>><i>His irritation recedes a little.</i> I don't know how many times I've rolled this boulder, yet every time I do, there always seems to be some little nook I've never seen before. <i>He sounds almost sentimental.</i> Amazing, isn't it?\n[[Maybe you're just senile|SisBoulderSenile]]\n[[Isn't it excruciating to keep rolling this boulder?|SisBoulder3]]\n[[I suppose so|SisBoulderInteresting0]]\n",
 		"position": {
 			"x": 1200,
 			"y": 0

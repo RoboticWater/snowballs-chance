@@ -41,8 +41,8 @@ colorID: 0
 position: 600,0
 ---
 Still here? My office is Limbo, but outside is Hell. You may leave at any time. Given your <em>particular</em> constitution, however, you might not last very long....
-[[<i>Leave the office</i>|LeaveOffice]]
 [[Um, hello?|DevilHello]]
+[[<i>Leave the office</i>|LeaveOffice]]
 ===
 title: DevilHello
 tags: 
@@ -51,8 +51,8 @@ position: 600,300
 ---
 ...I said florals, Karen! Oh, just a dream. Where was I?
 I <em>say</em> I rule Hell, but I really just lease the space. My full-time work is in the fashion industry. Like my shoes? They’re Prada. I like them almost as much as I like sleep.
-[[<i>Leave the office</i>|LeaveOffice]]
 [[I prefer Gucci|DevilGucci]]
+[[<i>Leave the office</i>|LeaveOffice]]
 ===
 title: DevilGucci
 tags: 

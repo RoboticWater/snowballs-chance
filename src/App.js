@@ -19,6 +19,16 @@ const audio_files = {
   amb_office: require('./resources/sound/office_music.mp3'),
 }
 
+const background_files = {
+  'cave': require('./resources/images/background/cave.png'),
+  'office': require('./resources/images/background/office.png')
+}
+
+const image_files = {
+  'devil': require('./resources/images/character/devil.png'),
+  'sis': require('./resources/images/character/sis.png')
+}
+
 const SKIP_THE_BULLSHIT = false;
 
 function lerp(start, end, amt) {
@@ -37,6 +47,8 @@ class App extends Component {
       showTitle: false,
       showPlayer: false,
       cornerPlayer: false,
+      background: 'cave',
+      image: '',
     }
     this.introSound = new Audio(intro);
     this.audioAmbient = new Audio();
@@ -96,6 +108,14 @@ class App extends Component {
     this.setState({ showTitle: state });
   }
 
+  setBackground(state) {
+    this.setState({ background: state })
+  }
+
+  setImage(state) {
+    this.setState({ image: state })
+  }
+
   componentDidMount() {
     let interval = setInterval(this.changeLife.bind(this), 100);
     this.setState({ interval: interval });
@@ -112,13 +132,13 @@ class App extends Component {
     } else {
       this.introSound.play();
       this.setState({ start: true, showTitle: true });
-      setTimeout(() => this.setState({ showDialog: true }), 12000);
+      setTimeout(() => this.setState({ showDialog: true }), 9000);
     }
   }
 // 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{backgroundImage: 'url(' + background_files[this.state.background] + ')'}}>
         {this.state.start && <Fade startVisisble show={this.state.showTitle} className="title-card">
           <h1>A Snowball's Chance</h1>
           <h2>in</h2>
@@ -131,13 +151,15 @@ class App extends Component {
         <div className="content">
           <div className="left"></div>
           <div className="center">
-            <div className="image"></div>
+            <div className="image" style={{backgroundImage: 'url(' + image_files[this.state.image] + ')'}}></div>
             {this.state.start && <div className={classNames("dialog-box", {small: this.state.showTitle})}>
                <DialogDisplay
                 show={this.state.showDialog}
                 setAudio={this.setAudio.bind(this)}
                 setSnowball={this.setSnowball.bind(this)}
                 setTitle={this.setTitle.bind(this)}
+                setBackground={this.setBackground.bind(this)}
+                setImage={this.setImage.bind(this)}
               />
             </div>}
           </div>
@@ -147,6 +169,7 @@ class App extends Component {
           <img src={sunburst} alt=""/>
           <div className="button" onClick={() => this.begin()}>Begin</div>
         </div>}
+        <div className="vignette"></div>
       </div>
     );
   }

@@ -1,0 +1,6 @@
+.PlayerDisplay {
+	background: #FaFaF8;
+	box-shadow: 0 0 10px 10px #FaFaF8;
+	border-radius: 100%;
+	transition: background 2.6s cubic-bezier(.6,.05,.19,.97), box-shadow 2.6s cubic-bezier(.6,.05,.19,.97)
+}

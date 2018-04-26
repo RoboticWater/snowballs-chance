@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import bondage from 'bondage';
 import test from '../resources/test2.json';
 
+import Fade from '../Fade';
+
 import './DialogDisplay.css';
 
 export default class DialogDisplay extends Component {
@@ -10,6 +12,7 @@ export default class DialogDisplay extends Component {
     super(props);
     this.state = {
       text: '',
+      showText: true,
       options: [],
       selector: null,
       runner: null,
@@ -25,8 +28,10 @@ export default class DialogDisplay extends Component {
         let tokens = command.split(' ');
         if (tokens[0] === 'image') {
           console.log("SET IMAGE")
+          this.props.setImage(tokens[1])
         } else if (tokens[0] === 'background') {
           console.log("SET BACKGROUND")
+          this.props.setBackground(tokens[1])
         } else if (tokens[0] === 'audio') {
           console.log("SET AUDIO")
           this.props.setAudio(tokens[1])
@@ -51,10 +56,14 @@ export default class DialogDisplay extends Component {
     }
     result = this.state.dialog.next().value;
     if (result instanceof bondage.TextResult) {
-      this.setState(prev => ({ 
-        text: result.text,
-        selector: null,
-      }));
+      this.setState({ showText: false });
+      setTimeout(() => {
+        this.setState(prev => ({
+          text: result.text,
+          selector: null,
+          showText: true,
+        }));
+      }, 600);
     } else if (result instanceof bondage.OptionsResult) {
       this.setState(prev => ({ 
         selector: result,
@@ -66,14 +75,15 @@ export default class DialogDisplay extends Component {
   renderOptions(options) {
     return this.state.selector ? 
       options.map((option, index) => (<div key={index} className="option" onClick={() => this.getNext(index)} dangerouslySetInnerHTML={{__html: option}}></div>)) :
-      (<div className="option" onClick={() => this.getNext()}>&#8594;</div>)
+      (<div className="option next" onClick={() => this.getNext()}>⤳</div>) //⟶⟹⤳⇾
   }
 
   render() {
-    // console.log(this.state)
     return (
       <div className={classNames("DialogDisplay", {show: this.props.show})}>
-        <div className="text" dangerouslySetInnerHTML={{__html: this.state.text}}></div>
+        <div 
+          className={classNames("text", {show: this.state.showText})} 
+          dangerouslySetInnerHTML={{__html: this.state.text}}></div>
         <div className="options">
           {this.renderOptions(this.state.options)}
         </div>
