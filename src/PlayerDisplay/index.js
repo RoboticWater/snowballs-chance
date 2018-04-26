@@ -18,7 +18,7 @@ export default class PlayerDisplay extends Component {
     context.setTransform(1, 0, 0, 1, 0, 0);
     context.clearRect(0, 0, this.player_canvas.current.width, this.player_canvas.current.height);
     context.restore();
-    console.log(this.playerLife)
+    // console.log(this.playerLife)
     if (this.playerLife <= 1 && this.props.dying) {
       console.log("SNOBALL DIED")
       this.props.snowballDead()

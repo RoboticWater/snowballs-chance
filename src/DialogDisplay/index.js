@@ -67,7 +67,10 @@ export default class DialogDisplay extends Component {
     if (select !== null) {
       this.state.selector.select(select)
     }
-    result = this.state.dialog.next().value;
+    var test = this.state.dialog.next()
+    console.log(test)
+    result = test.value;
+    console.log(result)
     if (result instanceof bondage.TextResult) {
       this.setState({ showText: false });
       setTimeout(() => {

@@ -2,7 +2,7 @@
 	{
 		"title": "SisIntro0",
 		"tags": "",
-		"body": "<<image sis_far>><<set $sis_disposition to 0>><i>You see a man rolling a dented boulder up a jagged hill.</i>\n<i>Just as the boulder reaches the top, it slides from is hands back down to the bottom. Slowly, but sturdily, the man walks down to meet the boulder, and he starts pushing it up the hill once more.</i>\n<i>The pain he feels is as audible in the stunted wheezes coming from his mouth as it is visible in his tendons tearing themselves from under his skin.</i>\n<i>You wonder, actually, how his skin hasn't torn itself off already, like an ill-fitting garment. The wear and discoloration of his skin seems debilitating.</i>\n<i>He doesn't see you. In fact, he seems madly preoccupied with a shockingly particular nodule on the surface of the boulder as it turns slowly upward.</i>\n[[<i>Leave this man to his own devices</i>|SisLeave0]]\n[[Hello|SisIntro1]]\n",
+		"body": "<<image sis_far>><i>You see a man rolling a dented boulder up a jagged hill.</i>\n<i>Just as the boulder reaches the top, it slides from is hands back down to the bottom. Slowly, but sturdily, the man walks down to meet the boulder, and he starts pushing it up the hill once more.</i>\n<i>The pain he feels is as audible in the stunted wheezes coming from his mouth as it is visible in his tendons tearing themselves from under his skin.</i>\n<i>You wonder, actually, how his skin hasn't torn itself off already, like an ill-fitting garment. The wear and discoloration of his skin seems debilitating.</i>\n<i>He doesn't see you. In fact, he seems madly preoccupied with a shockingly particular nodule on the surface of the boulder as it turns slowly upward.</i>\n[[<i>Leave this man to his own devices</i>|SisLeave0]]\n[[Hello|SisIntro1]]\n",
 		"position": {
 			"x": 2821,
 			"y": 112
@@ -22,7 +22,7 @@
 	{
 		"title": "SisLeave0",
 		"tags": "",
-		"body": "<i>You leave the peculiar man to his life and press on into the heat.</i>\r\n<i>There's a strange-looking rock over yonder.</i>\r\n[[<i>Take a closer look</i>|Oddity1]]\r\n[[<i>Keep moving on</i>|TravFar]]",
+		"body": "<i>You leave the peculiar man to his life and press on into the heat.</i>\r\n[[<i>Move on</i>|TravFar]]\r\n[[<i>Check it out</i>|Oddity1]]",
 		"position": {
 			"x": 4009,
 			"y": 78
@@ -72,10 +72,10 @@
 	{
 		"title": "SisBoulderPreoccupied",
 		"tags": "",
-		"body": "<<set $sis_disposition = $sis_disposition + 1>><i>His irritation recedes a little.</i> I don't know how many times I've rolled this boulder, yet every time I do, there always seems to be some little nook I've never seen before. <i>He sounds almost sentimental.</i> Amazing, isn't it?\n[[Maybe you're just senile|SisBoulderSenile]]\n[[Isn't it excruciating to keep rolling this boulder?|SisBoulder3]]\n[[I suppose so|SisBoulderInteresting0]]\n",
+		"body": "<i>His irritation recedes a little.</i> I don't know how many times I've rolled this boulder, yet every time I do, there always seems to be some little nook I've never seen before. <i>He sounds almost sentimental.</i> Amazing, isn't it?\n[[Maybe you're just senile|SisBoulderSenile]]\n[[Isn't it excruciating to keep rolling this boulder?|SisBoulder3]]\n[[I suppose so|SisBoulderInteresting0]]\n",
 		"position": {
 			"x": 2428,
-			"y": 1068
+			"y": 1065
 		},
 		"colorID": 0
 	},
@@ -92,7 +92,7 @@
 	{
 		"title": "SisExitYes",
 		"tags": "",
-		"body": "I'm old, hazy-eyed, and I stare at this boulder all day.\n[[SisExitNo]]\n",
+		"body": "I'm old, hazy-eyed, and I stare at this boulder all day.\n[[SisExitNo]]",
 		"position": {
 			"x": 3395,
 			"y": 1675
@@ -102,7 +102,7 @@
 	{
 		"title": "SisExitNo",
 		"tags": "",
-		"body": "<<if $sis_disposition < 0>>\n    <i>Keeping a firm hand on the boulder, he leans in as close to your little snowball face as his sinewy arm will allow, and says in the simplest tone possible:</i>\n    No.\n    <i>As deftly as he squatted to meet your gaze, he tightens his calves and thighs and regains his towering posture.</i>\n<<endif>>\nNo, I don't know where the exit is.\nBut every poor, misguided upstart who ever interrupted my boulder rollin' to ask me <<if: $sis_disposition <= 0>><i>he affects a very unflattering accent</i> \"do you know where the exit is?\"<<endif>> has always gone that way. Never seen one come back, so maybe there really is a way out.\n<i>He points with his withered digit to a winding path which dips lower into hazy curtains of heat.</i>\n<<if $sis_disposition < 0>>\n    Now, will you be on your way or will you be wasting more of my time?\n<<elseif $sis_disposition >= 0>>\n    Anything else?\n<<endif>>\n[[I don't think so, goodbye|SisLeave0]]\n[[So if there is a way out, why stick to this torture?|SisBoulderTorture0]]\n[[Before, you seemed pretty fascinated by something on that rock|SisBoulderPreoccupied]]\n[[Who are you?|SisWho0]]\n[[<i>Take a closer look at him</i>|SisBody0]]\n",
+		"body": "No, I don't know where the exit is.\nBut every poor, misguided upstart who ever interrupted my boulder rollin' to ask me has always gone that way. Never seen one come back, so maybe there really is a way out.\n<i>He points with his withered digit to a winding path which dips lower into hazy curtains of heat.</i>\nAnything else?\n[[I don't think so, goodbye|SisLeave0]]\n[[So if there is a way out, why stick to this torture?|SisBoulderTorture0]]\n[[Before, you seemed pretty fascinated by something on that rock|SisBoulderPreoccupied]]\n[[Who are you?|SisWho0]]\n[[<i>Take a closer look at him</i>|SisBody0]]\n",
 		"position": {
 			"x": 3381,
 			"y": 1310
@@ -122,7 +122,7 @@
 	{
 		"title": "SisBoulderSenile",
 		"tags": "",
-		"body": "<<set $sis_disposition = $sis_disposition - 1>><i>Any semblance of nostaliga leaves him immediately and he lets out a grumble.</i> Didn't your parents tell you to respect your elders?\n[[Snowballs don't have parents|SisBoulderNoParents0]]\n[[No, they were pretty progressive|SisBoulderProgParents]]\n[[I guess so|SisBoulderParentsYes]]\n",
+		"body": "<i>Any semblance of nostaliga leaves him immediately and he lets out a grumble.</i> Didn't your parents tell you to respect your elders?\n[[Snowballs don't have parents|SisBoulderNoParents0]]\n[[No, they were pretty progressive|SisBoulderProgParents]]\n[[I guess so|SisBoulderParentsYes]]\n",
 		"position": {
 			"x": 1957,
 			"y": 1088
@@ -182,7 +182,7 @@
 	{
 		"title": "SisBoulderChoices",
 		"tags": "",
-		"body": "<<if $sis_disposition < 0>>\n    Now, will you be on your way or will you be wasting more of my time?\n<<elseif $sis_disposition >= 0>>\n    Anything else?\n<<endif>>\n[[I don't think so, goodbye|SisLeave0]]\n[[Is the boulder thing some kind of torture?|SisBoulderTorture0]]\n[[Before, you seemed pretty fascinated by something on that rock|SisBoulderPreoccupied]]\n[[Who are you?|SisWho0]]\n[[<i>Take a closer look at him</i>|SisBody0]]\n",
+		"body": "Anything else?\n[[I don't think so, goodbye|SisLeave0]]\n[[Is the boulder thing some kind of torture?|SisBoulderTorture0]]\n[[Before, you seemed pretty fascinated by something on that rock|SisBoulderPreoccupied]]\n[[Who are you?|SisWho0]]\n[[<i>Take a closer look at him</i>|SisBody0]]\n",
 		"position": {
 			"x": 1846,
 			"y": 1899
@@ -312,7 +312,7 @@
 	{
 		"title": "SisBoulderDisagree0",
 		"tags": "",
-		"body": "<<set $sis_disposition = $sis_disposition - 1>><i>At that, a stern look etches its way across his face.</i> Oh, well what would a snowball know.\n[[I know that you don't have to be in pain to not be bored|SisBoulderDisagree1]]\n[[I know that there must be some other reason you're doing this|SisWhyCompels]]\n",
+		"body": "<i>At that, a stern look etches its way across his face.</i> Oh, well what would a snowball know.\n[[I know that you don't have to be in pain to not be bored|SisBoulderDisagree1]]\n[[I know that there must be some other reason you're doing this|SisWhyCompels]]\n",
 		"position": {
 			"x": 2784,
 			"y": 3824
@@ -332,7 +332,7 @@
 	{
 		"title": "SisBoulderAgree",
 		"tags": "",
-		"body": "<<set $sis_disposition = $sis_disposition + 3>><i>If his dry, wrinkled face would permit it, you almost think he would have shed a tear.</i> I don't think anyone's ever understood that.\n[[I still think there's something more here. Yes, you like the pain, but why? What compels you to like that feeling? There has to be a reason.|SisWhy1]]\n[[Do you think I could start rolling a boulder too?|SisRollBoulderToo]]\n",
+		"body": "<i>If his dry, wrinkled face would permit it, you almost think he would have shed a tear.</i> I don't think anyone's ever understood that.\n[[I still think there's something more here. Yes, you like the pain, but why? What compels you to like that feeling? There has to be a reason.|SisWhy1]]\n[[Do you think I could start rolling a boulder too?|SisRollBoulderToo]]\n",
 		"position": {
 			"x": 1638,
 			"y": 3942
@@ -342,7 +342,7 @@
 	{
 		"title": "SisRollBoulderToo",
 		"tags": "",
-		"body": "<<set $sis_disposotion = $sis_disposition + 3>><i>He looks around for a moment and finds a nice round stone just within reaching distance. He picks it up in the palm of his hand, gives it a short appraisal, and places it in front of you.</i> Here, you can start with this.\n<i>And start you do. The work makes you melt faster, but for a shor while, you think you understand this strange man. Very soon your last fronzen droplet melts and begins to fizzle away.</i>\n[[SnowballEnd0]]\n",
+		"body": "<i>He looks around for a moment and finds a nice round stone just within reaching distance. He picks it up in the palm of his hand, gives it a short appraisal, and places it in front of you.</i> Here, you can start with this.\n<i>And start you do. The work makes you melt faster, but for a shor while, you think you understand this strange man. Very soon your last fronzen droplet melts and begins to fizzle away.</i>\n[[SnowballEnd0]]\n",
 		"position": {
 			"x": 1338,
 			"y": 3942
@@ -362,7 +362,7 @@
 	{
 		"title": "SisWhyCompels",
 		"tags": "",
-		"body": "<<set $sis_disposition = $sis_disposition - 1>>I already told you that I like it! <i>His faces grows as firm and sharp as the treacherous hill he stands upon.</i> What else is there to understand?\n[[But you can get pain anywhere! You could exercise or just roll the boulder every once and a while! You just seem to be making exuses for your own endless torment!|SisWhy1]]\n[[Fine, I'll just leave it alone|SisWhyFine1]]\n",
+		"body": "I already told you that I like it! <i>His faces grows as firm and sharp as the treacherous hill he stands upon.</i> What else is there to understand?\n[[But you can get pain anywhere! You could exercise or just roll the boulder every once and a while! You just seem to be making exuses for your own endless torment!|SisWhy1]]\n[[Fine, I'll just leave it alone|SisWhyFine1]]\n",
 		"position": {
 			"x": 2120,
 			"y": 4254
@@ -392,7 +392,7 @@
 	{
 		"title": "SisWhyFine1",
 		"tags": "",
-		"body": "<i>After all that, he seems a little dejected.</i> Alright. Fine. \n<<if $sis_disposition < 0>>\n    Now, will you be on your way or will you be wasting more of my time?\n<<elseif $sis_disposition >= 0>>\n    Anything else?\n<<endif>>\n[[I don't think so, goodbye|SisLeave0]]\n[[Actually, I still don't understand why you're so attracted to the pain of pushing this boulder.|SisWhyCompels]]\n",
+		"body": "Anything else?\n[[I don't think so, goodbye|SisLeave0]]\n[[Actually, I still don't understand why you're so attracted to the pain of pushing this boulder.|SisWhyCompels]]\n",
 		"position": {
 			"x": 2757,
 			"y": 4547
@@ -532,7 +532,7 @@
 	{
 		"title": "TravStart",
 		"tags": "",
-		"body": "<<image traveler>>\n<i>A man grunts with exasperation</i> I knew it… I knew it.. I kn.. Oh! Hello! I don’t think I have seen another person in days... or maybe months. I was beginning to think I was all alone. So.. what the heck are you doing here anyways?\n[[I just got here and looking around.|con2]]\n[[I am not sure I am trying to see what this place is all about. Why are you here?|con1]]\n[[I’m honestly not sure. What's the deal with you?|con1]]\n[[Leaving, actually|Walk away]]\n",
+		"body": "<<image traveler>>\n<i>A man grunts with exasperation</i> I knew it… I knew it.. I kn.. Oh! Hello! I don’t think I have seen another person in days... or maybe months. I was beginning to think I was all alone. So.. what the heck are you doing here anyways?\n[[I just got here and looking around.|con2]]\n[[I am not sure I am trying to see what this place is all about. Why are you here?|con1]]\n[[I’m honestly not sure. What's the deal with you?|con1]]\n[[Leaving, actually|Walkaway]]\n",
 		"position": {
 			"x": 5769,
 			"y": 49
@@ -552,7 +552,7 @@
 	{
 		"title": "con1",
 		"tags": "",
-		"body": "I have been travelling for a few months… I think. I am not sure, I decided to leave my home town a while back and try to find something better, but I don’t know what that is, maybe a way out. \n[[Wow, I can't believe you have travelled this far! You must have seen so much! Did you happen to see that man with the big rock? |con3]]\n[[Wait.. you said you came from a town? I haven't seen one of those. What was that like?|Describing town]]\n",
+		"body": "I have been travelling for a few months… I think. I am not sure, I decided to leave my home town a while back and try to find something better, but I don’t know what that is, maybe a way out. \n[[Wow, I can't believe you have travelled this far! You must have seen so much! Did you happen to see that man with the big rock? |con3]]\n[[Wait.. you said you came from a town? I haven't seen one of those. What was that like?|Describingtown]]\n",
 		"position": {
 			"x": 5559,
 			"y": 369
@@ -560,9 +560,9 @@
 		"colorID": 6
 	},
 	{
-		"title": "Describing town",
+		"title": "Describingtown",
 		"tags": "",
-		"body": "Well there was.. the uhh.. the market, ya ya the market, and the little houses people had made. A man used to play the banjo all the time by his house. I can't remember the place's name though. There was a bank or something that everyone seemed to go to often. It wasn't a <em>horrible</em> place, just not where I wanted to be.\n[[Can you not remember it better than that? Maybe you should go back, by now it might have changed a lot and be more of what you want.|Head back to town]]\n[[Do you remember anything else?|More about town]]\n",
+		"body": "Well there was.. the uhh.. the market, ya ya the market, and the little houses people had made. A man used to play the banjo all the time by his house. I can't remember the place's name though. There was a bank or something that everyone seemed to go to often. It wasn't a <em>horrible</em> place, just not where I wanted to be.\n[[Can you not remember it better than that? Maybe you should go back, by now it might have changed a lot and be more of what you want.|Headbacktotown]]\n[[Do you remember anything else?|Moreabouttown]]\n",
 		"position": {
 			"x": 5220,
 			"y": 360
@@ -572,7 +572,7 @@
 	{
 		"title": "con3",
 		"tags": "",
-		"body": "Huh? What in the world are you talking about? I haven’t seen anyone in a long time. The last person I remember is that guy, umm, he was kinda short, long hair, uhh nevermind that doesn't seem right.\n[[How have you not noticed anything? There has to be so many cool things around here!|Focused on journey]]\n[[You have to be kidding! What have you been doing? Walking with your head down?|Focused on journey 2]]\n",
+		"body": "Huh? What in the world are you talking about? I haven’t seen anyone in a long time. The last person I remember is that guy, umm, he was kinda short, long hair, uhh nevermind that doesn't seem right.\n[[How have you not noticed anything? There has to be so many cool things around here!|Focusedonjourney]]\n[[You have to be kidding! What have you been doing? Walking with your head down?|Focusedonjourney2]]\n",
 		"position": {
 			"x": 5506,
 			"y": 702
@@ -590,9 +590,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "Head back to town",
+		"title": "Headbacktotown",
 		"tags": "",
-		"body": "You know.. that is not really a bad idea. I have been gone so long that things <em>must</em> have changed... right? I mean everything there cannot stay the same forever. Maybe I would like it now.\n[[You never know. Its a real possiblity!|About to head home]]\n[[With as little as you remember, I bet you could easily find something you like better there than searching this barron world|About to head home]]\n",
+		"body": "You know.. that is not really a bad idea. I have been gone so long that things <em>must</em> have changed... right? I mean everything there cannot stay the same forever. Maybe I would like it now.\n[[You never know. Its a real possiblity!|Abouttoheadhome]]\n[[With as little as you remember, I bet you could easily find something you like better there than searching this barron world|Abouttoheadhome]]\n",
 		"position": {
 			"x": 4867,
 			"y": 681
@@ -600,7 +600,7 @@
 		"colorID": 0
 	},
 	{
-		"title": "More about town",
+		"title": "Moreabouttown",
 		"tags": "",
 		"body": "Honestly, I don't remember much more. Things have gotten very foggy since travelling so much. I.. I don't know why I have such a hard time, but it all runs together.\n[[That's okay. I think it's amazing you have been able to travel this far and see so many unique things! I still remember when I saw the man rolling that ridculous rock way back there|con3]]\n",
 		"position": {
@@ -610,9 +610,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "Focused on journey 2",
+		"title": "Focusedonjourney2",
 		"tags": "",
-		"body": "No! I haven't been walking with my hea... well, now that you say it. I can't really remember what I have seen on my way here. I just kept walking trying to find an end. Not really paying attention to anything else.\n[[Then start enjoying the journey more than the destination. Start paying attention to what's around you.|Take his time]]\n[[I have found so many interesting artifacts and people on my way just to see you so start looking for things!|Take his time]]\n",
+		"body": "No! I haven't been walking with my hea... well, now that you say it. I can't really remember what I have seen on my way here. I just kept walking trying to find an end. Not really paying attention to anything else.\n[[Then start enjoying the journey more than the destination. Start paying attention to what's around you.|Takehistime]]\n[[I have found so many interesting artifacts and people on my way just to see you so start looking for things!|Takehistime]]\n",
 		"position": {
 			"x": 5293,
 			"y": 1135
@@ -620,9 +620,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "Focused on journey",
+		"title": "Focusedonjourney",
 		"tags": "",
-		"body": "Cool things? There is nothing here buddy. Like... uhh.. do you see anything around here that is remotely interesting? Its not worth taking the time to stop and look at.\n[[There are plenty of interesting things. You need to focus on your journey more and not just the destination. Enjoy the time it takes to get there.|Take his time]]\n[[Ehh, I guess you may have a point there. There isn't much around. But that doesn't mean you can't talk to people you meet as you travel|Take his time]]\n",
+		"body": "Cool things? There is nothing here buddy. Like... uhh.. do you see anything around here that is remotely interesting? Its not worth taking the time to stop and look at.\n[[There are plenty of interesting things. You need to focus on your journey more and not just the destination. Enjoy the time it takes to get there.|Takehistime]]\n[[Ehh, I guess you may have a point there. There isn't much around. But that doesn't mean you can't talk to people you meet as you travel|Takehistime]]\n",
 		"position": {
 			"x": 5631,
 			"y": 1152
@@ -632,7 +632,7 @@
 	{
 		"title": "con7",
 		"tags": "",
-		"body": "True... but I still think something is out there. At least I hope. What are <em>you</em> looking for?\n[[Somewhere I can get out of this place.|What are we looking for]]\n[[I am not exactly sure. An area that isn't so hot would be nice.|What are we looking for]]\n",
+		"body": "True... but I still think something is out there. At least I hope. What are <em>you</em> looking for?\n[[Somewhere I can get out of this place.|Whatarewelookingfor]]\n[[I am not exactly sure. An area that isn't so hot would be nice.|Whatarewelookingfor]]\n",
 		"position": {
 			"x": 5993,
 			"y": 871
@@ -640,9 +640,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "What are we looking for",
+		"title": "Whatarewelookingfor",
 		"tags": "",
-		"body": "I doubt you will be able to find that here! I think you have a greater chance finding a needle in a hay stack that never ends.\n[[Even if I can't I am at least going to enjoy being able to see all the cool things I find along the way!|Focused on journey]]\n[[You may be right. I am kind of starting to feel like I may have looked at the situation through rose colored glasses.|We give up on finding something better]]\n",
+		"body": "I doubt you will be able to find that here! I think you have a greater chance finding a needle in a hay stack that never ends.\n[[Even if I can't I am at least going to enjoy being able to see all the cool things I find along the way!|Focusedonjourney]]\n[[You may be right. I am kind of starting to feel like I may have looked at the situation through rose colored glasses.|Wegiveuponfindingsomethingbetter]]\n",
 		"position": {
 			"x": 5968,
 			"y": 1167
@@ -652,7 +652,7 @@
 	{
 		"title": "con8",
 		"tags": "",
-		"body": "Oh, thats true, you are in kind of a hurry arn't cya. You seem really optimistic considering your cicumstances. You really think you can find something don't you?\n[[Of course!|We can find something better]]\n[[I am not sure. After coming this far I am starting to have doubts|We give up on finding something better]]\n",
+		"body": "Oh, thats true, you are in kind of a hurry arn't cya. You seem really optimistic considering your cicumstances. You really think you can find something don't you?\n[[Of course!|Wecanfindsomethingbetter]]\n[[I am not sure. After coming this far I am starting to have doubts|Wegiveuponfindingsomethingbetter]]\n",
 		"position": {
 			"x": 6499,
 			"y": 664
@@ -660,9 +660,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "We give up on finding something better",
+		"title": "Wegiveuponfindingsomethingbetter",
 		"tags": "",
-		"body": "I understand. I kind of feel like it is pointless to keep going when I don't even know whats out there. But then I don't really even remember what home was like. At this point I am only able to remember little bits of what it was.\n[[Well just go back and it won't matter. Just go back to what you have been doing before you left|Go back home]]\n[[If you don't even remember then how about you just keep travelling. Neither of us are positive there is nothing out here. There are still possibilities, and you have much more time to explore than me.|Keep moving forward]]\n",
+		"body": "I understand. I kind of feel like it is pointless to keep going when I don't even know whats out there. But then I don't really even remember what home was like. At this point I am only able to remember little bits of what it was.\n[[Well just go back and it won't matter. Just go back to what you have been doing before you left|Gobackhome]]\n[[If you don't even remember then how about you just keep travelling. Neither of us are positive there is nothing out here. There are still possibilities, and you have much more time to explore than me.|Keepmovingforward]]\n",
 		"position": {
 			"x": 6237,
 			"y": 1183
@@ -670,9 +670,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "About to head home",
+		"title": "Abouttoheadhome",
 		"tags": "",
-		"body": "Hmm.. It <em>is</em> really lonely out here. It could very well be best in the long run to return home\n[[I agree|Go back home]]\n[[Well there is certianly nothing out there to go to|Go back home]]\n",
+		"body": "Hmm.. It <em>is</em> really lonely out here. It could very well be best in the long run to return home\n[[I agree|Gobackhome]]\n[[Well there is certianly nothing out there to go to|Gobackhome]]\n",
 		"position": {
 			"x": 4994,
 			"y": 1158
@@ -680,9 +680,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "Take his time",
+		"title": "Takehistime",
 		"tags": "",
-		"body": "Yea! I need to start paying attention to where I am and not being so narrow minded about where I am going. Now.. if I could just know where I wanted to go. I am still confused on weather I should take the time to go back to that home I sort of remember or trek onward to the unknown...\n[[After coming this far I think you need to keep going. There has to be something out there you will enjoy|Keep moving forward]]\n[[I am not sure either. I know I haven't found anywhere I would want to stay yet, and honestly I don't think I will. You might should go back home instead of walking further away.|Go back home]]\n",
+		"body": "Yea! I need to start paying attention to where I am and not being so narrow minded about where I am going. Now.. if I could just know where I wanted to go. I am still confused on weather I should take the time to go back to that home I sort of remember or trek onward to the unknown...\n[[After coming this far I think you need to keep going. There has to be something out there you will enjoy|Keepmovingforward]]\n[[I am not sure either. I know I haven't found anywhere I would want to stay yet, and honestly I don't think I will. You might should go back home instead of walking further away.|Gobackhome]]\n",
 		"position": {
 			"x": 5486,
 			"y": 1431
@@ -690,9 +690,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "We can find something better",
+		"title": "Wecanfindsomethingbetter",
 		"tags": "",
-		"body": "You know.. you might just be right. Maybe I made a good decision back when I decided to take this journey. I have been thinking about turning around. You know.. calling it quits and heading back to what I know. Or at least what I thought I knew... But I think I should be more optimistic\n[[Why turn back? Just keep going, you never know what you may find|Keep moving forward]]\n[[I don't think I would ever turn back. Not after making it this far|Keep moving forward]]\n[[That's the attitude! Do what feels right for you|Keep moving forward]]\n",
+		"body": "You know.. you might just be right. Maybe I made a good decision back when I decided to take this journey. I have been thinking about turning around. You know.. calling it quits and heading back to what I know. Or at least what I thought I knew... But I think I should be more optimistic\n[[Why turn back? Just keep going, you never know what you may find|Keepmovingforward]]\n[[I don't think I would ever turn back. Not after making it this far|Keepmoving orward]]\n[[That's the attitude! Do what feels right for you|Keepmovingforward]]\n",
 		"position": {
 			"x": 6576,
 			"y": 1085
@@ -700,7 +700,7 @@
 		"colorID": 0
 	},
 	{
-		"title": "Keep moving forward",
+		"title": "Keepmovingforward",
 		"tags": "",
 		"body": "After travelling this far, they may be things I never get to see if I turn back now. I don't know what I will find but if I start paying attention to what's around me more then possibly I will enjoy myself more. I feel like I am going to keep travelling onward to explore the unknown!\n[[Sounds like a fantastic journey to me!|Ending]]\n[[I wish I had as much time as you to explore like that. Just take your time and enjoy it all.|Ending]]\n",
 		"position": {
@@ -710,7 +710,7 @@
 		"colorID": 0
 	},
 	{
-		"title": "Go back home",
+		"title": "Gobackhome",
 		"tags": "",
 		"body": "After talking with you I do think my best option is to go back home. It makes the most sense to follow what I know instead of wasting my time.\n[[I think that is a wise choice!|Ending]]\n[[Cool! Well I hope you have an interesting trek back|Ending]]\n",
 		"position": {
@@ -730,7 +730,7 @@
 		"colorID": 0
 	},
 	{
-		"title": "Walk away",
+		"title": "Walkaway",
 		"tags": "",
 		"body": "<<image traveler_far>>\n<i>You slowly roll away from the traveller. Moving ahead on your journey.</i>\n<i>As he fades off into the distance you look ahead at what is coming next.</i>\n<i>As you roll around a large rock in your way you come across something unusual.</i>\n[[sword]]\n",
 		"position": {
@@ -742,7 +742,7 @@
 	{
 		"title": "sword",
 		"tags": "",
-		"body": "<i>As you get closer there is a slight glint in the distance. You can tell it looks like some sort of metal, or maybe a mirror.</i>\n-> <i>Take a closer look</i>\n    <<image sword>>\n    <i>It looks like a sword.</i>\n    -> <i>Try to pull the sword</i>\n        <i>It doesn't budge.</i>\n        -> <i>Try to pull the sword again</i>\n            <i>Still nothing happens. The sword seems to have been stuck in the rock for years, so you decide to leave it alone.</i>\n            [[After sword]]\n        -> <i>Continue moving onwards</i>\n            You roll away from the sword and continue on your journey.\n            [[After sword]]\n    -> <i>Ignore the sword in the rock and continue moving onwards</i>\n        [[After sword]]\n-> <i>Continue moving onwards</i>\n    <i>You roll away from the sword and continue on your journey.</i>\n    [[After sword]]\n",
+		"body": "<i>As you get closer there is a slight glint in the distance. You can tell it looks like some sort of metal, or maybe a mirror.</i>\n-> <i>Take a closer look</i>\n    <<image sword>>\n    <i>It looks like a sword.</i>\n    -> <i>Try to pull the sword</i>\n        <i>It doesn't budge.</i>\n        -> <i>Try to pull the sword again</i>\n            <i>Still nothing happens. The sword seems to have been stuck in the rock for years, so you decide to leave it alone.</i>\n            [[Aftersword]]\n        -> <i>Continue moving onwards</i>\n            You roll away from the sword and continue on your journey.\n            [[Aftersword]]\n    -> <i>Ignore the sword in the rock and continue moving onwards</i>\n        [[Aftersword]]\n-> <i>Continue moving onwards</i>\n    <i>You roll away from the sword and continue on your journey.</i>\n    [[Aftersword]]\n",
 		"position": {
 			"x": 7251,
 			"y": 176
@@ -750,7 +750,7 @@
 		"colorID": 0
 	},
 	{
-		"title": "After sword",
+		"title": "Aftersword",
 		"tags": "",
 		"body": "<i>You leave the sword behind as you move further into the unknown.</i>\n<<image dj_far>><i>As you pass by a lake of lava, you spot someone sleeping by the shore.<i/>\n[[Try to talk with this person|MB1]]\n[[Ignore him|snowman]]\n",
 		"position": {
@@ -982,7 +982,7 @@
 	{
 		"title": "MB13",
 		"tags": "",
-		"body": "Shit I don't care anymore. There's no point in this or anything else. Just letting you know now that it's hot garbage...\n[[<i>Listen to the song</i>|Words Hurt]]\n",
+		"body": "Shit I don't care anymore. There's no point in this or anything else. Just letting you know now that it's hot garbage...\n[[<i>Listen to the song</i>|WordsHurt]]\n",
 		"position": {
 			"x": 11207,
 			"y": 1641
@@ -990,7 +990,7 @@
 		"colorID": 6
 	},
 	{
-		"title": "Words Hurt",
+		"title": "WordsHurt",
 		"tags": "",
 		"body": "<<audio words_hurt>>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting, <br>\n\nI offended<br>\nBut demanded<br>\nMy pride, my shame<br>\nI just put it on line<br>\nrising,<br>\nIt's racing, but smiling<br>\nMy, my game<br>\nI'm just doing <br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling,<br>\nHurting, <br>\n\nI never been defeated<br>\naffected<br>\nMy blame, your fault<br>\nI'm not really carring<br>\nTaking things like<br>\nArranging my news tracks<br>\nSome words<br>\nThey've hurt<br>\nLet me on line<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting,<br>\n\nSometimes is it happening?<br>\nYour words, you don't<br>\nBeen around my falling<br>\nInside in mind<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting, <br>\n\nI offended<br>\nBut demanded<br>\nMy pride, my shame<br>\nI just put it on line<br>\nrising,<br>\nIt's racing, but smiling<br>\nMy, my game<br>\nI'm just doing <br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling,<br>\nHurting, <br>\n\nI never been defeated<br>\naffected<br>\nMy blame, your fault<br>\nI'm not really carring<br>\nTaking things like<br>\nArranging my news tracks<br>\nSome words<br>\nThey've hurt<br>\nLet me on line<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting,<br>\n\nSometimes is it happening?<br>\nYour words, you don't<br>\nBeen around my falling<br>\nInside in mind<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting, <br>\n\nI offended<br>\nBut demanded<br>\nMy pride, my shame<br>\nI just put it on line<br>\nrising,<br>\nIt's racing, but smiling<br>\nMy, my game<br>\nI'm just doing <br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling,<br>\nHurting, <br>\n\nI never been defeated<br>\naffected<br>\nMy blame, your fault<br>\nI'm not really carring<br>\nTaking things like<br>\nArranging my news tracks<br>\nSome words<br>\nThey've hurt<br>\nLet me on line<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting,<br>\n\nSometimes is it happening?<br>\nYour words, you don't<br>\nBeen around my falling<br>\nInside in mind<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting, <br>\n\nI offended<br>\nBut demanded<br>\nMy pride, my shame<br>\nI just put it on line<br>\nrising,<br>\nIt's racing, but smiling<br>\nMy, my game<br>\nI'm just doing <br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling,<br>\nHurting, <br>\n\nI never been defeated<br>\naffected<br>\nMy blame, your fault<br>\nI'm not really carring<br>\nTaking things like<br>\nArranging my news tracks<br>\nSome words<br>\nThey've hurt<br>\nLet me on line<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting,<br>\n\nSometimes is it happening?<br>\nYour words, you don't<br>\nBeen around my falling<br>\nInside in mind<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting, <br>\n\nI offended<br>\nBut demanded<br>\nMy pride, my shame<br>\nI just put it on line<br>\nrising,<br>\nIt's racing, but smiling<br>\nMy, my game<br>\nI'm just doing <br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling,<br>\nHurting, <br>\n\nI never been defeated<br>\naffected<br>\nMy blame, your fault<br>\nI'm not really carring<br>\nTaking things like<br>\nArranging my news tracks<br>\nSome words<br>\nThey've hurt<br>\nLet me on line<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting,<br>\n\nSometimes is it happening?<br>\nYour words, you don't<br>\nBeen around my falling<br>\nInside in mind<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting, <br>\n\nI offended<br>\nBut demanded<br>\nMy pride, my shame<br>\nI just put it on line<br>\nrising,<br>\nIt's racing, but smiling<br>\nMy, my game<br>\nI'm just doing <br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling,<br>\nHurting, <br>\n\nI never been defeated<br>\naffected<br>\nMy blame, your fault<br>\nI'm not really carring<br>\nTaking things like<br>\nArranging my news tracks<br>\nSome words<br>\nThey've hurt<br>\nLet me on line<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting,<br>\n\nSometimes is it happening?<br>\nYour words, you don't<br>\nBeen around my falling<br>\nInside in mind<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting, <br>\n\nI offended<br>\nBut demanded<br>\nMy pride, my shame<br>\nI just put it on line<br>\nrising,<br>\nIt's racing, but smiling<br>\nMy, my game<br>\nI'm just doing <br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling,<br>\nHurting, <br>\n\nI never been defeated<br>\naffected<br>\nMy blame, your fault<br>\nI'm not really carring<br>\nTaking things like<br>\nArranging my news tracks<br>\nSome words<br>\nThey've hurt<br>\nLet me on line<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting,<br>\n\nSometimes is it happening?<br>\nYour words, you don't<br>\nBeen around my falling<br>\nInside in mind<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting, <br>\n\nI offended<br>\nBut demanded<br>\nMy pride, my shame<br>\nI just put it on line<br>\nrising,<br>\nIt's racing, but smiling<br>\nMy, my game<br>\nI'm just doing <br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling,<br>\nHurting, <br>\n\nI never been defeated<br>\naffected<br>\nMy blame, your fault<br>\nI'm not really carring<br>\nTaking things like<br>\nArranging my news tracks<br>\nSome words<br>\nThey've hurt<br>\nLet me on line<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting,<br>\n\nSometimes is it happening?<br>\nYour words, you don't<br>\nBeen around my falling<br>\nInside in mind<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting, <br>\n\nI offended<br>\nBut demanded<br>\nMy pride, my shame<br>\nI just put it on line<br>\nrising,<br>\nIt's racing, but smiling<br>\nMy, my game<br>\nI'm just doing <br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling,<br>\nHurting, <br>\n\nI never been defeated<br>\naffected<br>\nMy blame, your fault<br>\nI'm not really carring<br>\nTaking things like<br>\nArranging my news tracks<br>\nSome words<br>\nThey've hurt<br>\nLet me on line<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting,<br>\n\nSometimes is it happening?<br>\nYour words, you don't<br>\nBeen around my falling<br>\nInside in mind<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting, <br>\n\nI offended<br>\nBut demanded<br>\nMy pride, my shame<br>\nI just put it on line<br>\nrising,<br>\nIt's racing, but smiling<br>\nMy, my game<br>\nI'm just doing <br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling,<br>\nHurting, <br>\n\nI never been defeated<br>\naffected<br>\nMy blame, your fault<br>\nI'm not really carring<br>\nTaking things like<br>\nArranging my news tracks<br>\nSome words<br>\nThey've hurt<br>\nLet me on line<br>\n\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nWords hurt<br>\nBut feeling right<br>\nWords hurt<br>\nBut simply change nothing<br>\nRising, falling<br>\nHurting,<br>\n\nSometimes is it happening?<br>\nYour words, you don't<br>\nBeen around my falling<br>\nInside in mind<br>\n[[<b>TURN IT OFF!!!!</b>|MB14]]\n[[Not bad actually! I like it!|MB15]]\n",
 		"position": {
@@ -1112,7 +1112,7 @@
 	{
 		"title": "TravFar",
 		"tags": "",
-		"body": "<<image traveler_far>><i>In the distance you see a humble-looking figure.</i>\n[[<i>Approach him</i>|TravStart]]\n[[<i>Avoid him</i>|Walk away]]",
+		"body": "<i>In the distance you see a humble-looking figure.</i>\n[[<i>Approach him</i>|TravStart]]\n[[<i>Avoid him</i>|Walkaway]]",
 		"position": {
 			"x": 5775,
 			"y": -225
@@ -1122,7 +1122,7 @@
 	{
 		"title": "Oddity1",
 		"tags": "",
-		"body": "<<image rock>>\n<i>As you approach the rock, it becomes apparent that this rock is spouting a constant stream of obscenities. You decide that this kind of phenomenon is best left alone.</i>\n[[<i>Keep moving on</i>|TravFar]]",
+		"body": "<<image rock>>\n<i>As you approach the rock, it becomes apparent that this rock is spouting a constant stream of obscenities. You decide that this kind of phenomenon is best left alone.</i>\n[[TravFar]]",
 		"position": {
 			"x": 4396,
 			"y": 421
@@ -1152,7 +1152,7 @@
 	{
 		"title": "SisWhyAgree",
 		"tags": "",
-		"body": "<<set $sis_disposition = $sis_disposition + 3>><i>If his dry, wrinkled face would permit it, you almost think he would have shed a tear.</i> I've never told anyone that, and I don't think anyone would've ever understood it. Thank you.\n[[Do you think I could start rolling a boulder too?|SisRollBoulderToo]]\n[[You're welcome, but I think I'd better be going|SisLeave0]]",
+		"body": "<i>If his dry, wrinkled face would permit it, you almost think he would have shed a tear.</i> I've never told anyone that, and I don't think anyone would've ever understood it. Thank you.\n[[Do you think I could start rolling a boulder too?|SisRollBoulderToo]]\n[[You're welcome, but I think I'd better be going|SisLeave0]]",
 		"position": {
 			"x": 1570,
 			"y": 4570
