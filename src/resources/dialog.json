@@ -412,7 +412,7 @@
 	{
 		"title": "Start",
 		"tags": "",
-		"body": "<i>Click the arrow to proceed</i>\n<<audio amb_horror>><<title hide>><i>You fall for what seems like an eternity down a swriling vortex of darkness. You don't remember what happened. You don't know where you're going.</i>\n<i>The confusion starts seeping into your mind, churning over and over. Grasping at the threads of your slowly unraveling sanity, you try to remember.</i>\n<i>You try to remember yourself.<br>Your home. Friends? Anything.<br>But you can't. Everything's fluttered away.</i>\n<i>Except for one, solitary idea...</i>\n<<snowball show>>\n<i>You are a snowball.</i>\n<i>You cherish the thought with every part of you that still remains, because it's the only thing you have left.</i>\n<i>And then it all stops.</i>\n<<audio none>><i>Silence.</i>\n<i>...</i>\n<i>But then you hear something...</i>\n<i>It's...</i>\n<<audio amb_office>>\n<i>Elevator music?</i>\n<<snowball corner>>\n[[Office0]]\n",
+		"body": "<i>Click the arrow to proceed</i>\n<<audio amb_horror>><<title hide>><<background none>><i>You fall for what seems like an eternity down a swriling vortex of darkness. You don't remember what happened. You don't know where you're going.</i>\n<i>The confusion starts seeping into your mind, churning over and over. Grasping at the threads of your slowly unraveling sanity, you try to remember.</i>\n<i>You try to remember yourself.<br>Your home. Friends? Anything.<br>But you can't. Everything's fluttered away.</i>\n<i>Except for one, solitary idea...</i>\n<<snowball show>>\n<i>You are a snowball.</i>\n<i>You cherish the thought with every part of you that still remains, because it's the only thing you have left.</i>\n<i>And then it all stops.</i>\n<<audio none>><i>Silence.</i>\n<i>...</i>\n<i>But then you hear something...</i>\n<i>It's...</i>\n<<audio amb_office>>\n<i>Elevator music?</i>\n<<snowball corner>>\n[[Office0]]\n",
 		"position": {
 			"x": -396,
 			"y": 22
@@ -512,7 +512,7 @@
 	{
 		"title": "Outside0",
 		"tags": "",
-		"body": "<<audio amb_horror>><<snowball melting>><i>The heat hits you like a train, but you retain your constitution. It won't break you so soon.<br><br>On you way through the winding stone stomachs of Hell, you spot an oddity in the distance.</i>\n[[<i>Get closer.</i>|Oddity0]]\n[[<i>Move on.</i>|SisIntro0]]\n",
+		"body": "<<audio amb_horror>><<snowball melting>><<background cave>><<image none>><i>The heat hits you like a train, but you retain your constitution. It won't break you so soon.<br><br>On you way through the winding stone stomachs of Hell, you spot an oddity in the distance.</i>\n[[<i>Get closer.</i>|Oddity0]]\n[[<i>Move on.</i>|SisIntro0]]\n",
 		"position": {
 			"x": 939,
 			"y": 15
@@ -1134,8 +1134,8 @@
 		"tags": "",
 		"body": "<i>You journey for some time, going deeper, finding Hell darker and even less hospitable than before, and then you come to and outcropping.</i>\n<<image crazy_far>><<background crazy>><i>Hell is not fiery. What you find at the end of your journey is flat and cold on all sides, with the occupancy of two: you and another. It would be generous to describe the bony figure sluggishly crawling around you as a skeleton wearing sad, thin, leathery skin. Its chitters and bleeding fingers match the criss-crossing scars born of lunacy you spot around you, at one angle a series of tallied days, at another angle a futile attempt of conquering emptiness with physical effort.</i>\n<i>You know you could have only reached this place by passing over opportunities to speak with other denizens of Hell, and you have to ask yourself if it was worth it. There is no obvious exit. Maybe you can find it in the crawling creature’s broken nails, damaged from perpetually digging into solid surfaces even while crawling, but you are too smart to entertain hope.</i>\n<<image crazy>><i>This creature’s desire to leave Hell is so familiar that this creature might just be you.</i>\n[[<i>Wait out the rest of your time</i>|SnowballEnd0]]\n[[<i>Claw at the exit too</i>|SnowballEnd0]]",
 		"position": {
-			"x": 14578,
-			"y": -155
+			"x": 13917,
+			"y": -133
 		},
 		"colorID": 0
 	},
