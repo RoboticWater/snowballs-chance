@@ -22,7 +22,7 @@
 	{
 		"title": "SisLeave0",
 		"tags": "",
-		"body": "<i>You leave the peculiar man to his life and press on into the heat.</i>\r\n[[<i>Move on</i>|TravFar]]\r\n[[<i>Check it out</i>|Oddity1]]",
+		"body": "<i>You leave the peculiar man to his life and press on into the heat.</i>\r\n<i>In the distance you hear a strange murmur.</i>\r\n[[<i>Move on</i>|TravFar]]\r\n[[<i>Check it out</i>|Oddity1]]",
 		"position": {
 			"x": 4009,
 			"y": 78
