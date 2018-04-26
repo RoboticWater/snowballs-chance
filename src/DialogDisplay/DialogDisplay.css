@@ -9,6 +9,7 @@
     opacity: 1;
   }
   .options {
+    overflow-y: auto;
     background: #F3F1EF;
   	/* background: #4422220a; */
   	/* text-align: right; */
@@ -66,6 +67,7 @@
     position: relative;
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(.6,.05,.19,.97);
+    overflow-y: auto;
     /* background: #FaFaF8;
     box-shadow: 0 0 20px 20px #FaFaF8; */
     i {

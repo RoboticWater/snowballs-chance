@@ -190,3 +190,49 @@ body {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
+
+.modal {
+  p {
+    padding: 0;
+    margin: 0 0 10px 0;
+  }
+  & > div {
+    background: $white;
+    padding: 30px;
+    width: 50%;
+  }
+  .button {
+    cursor: pointer;
+    font-weight: 600;
+    color: #877;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    position: relative;
+    /* text-decoration: underline; */
+    &:after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: -13px;
+      width: 0; 
+      height: 0; 
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      border-left: 4px solid #877;
+      opacity: 0;
+      z-index: 1000;
+      transition: left 0.35s cubic-bezier(.6,.05,.19,.97), opacity 0.35s cubic-bezier(.6,.05,.19,.97);
+    }
+    &:hover {
+      color: #b55;
+      &:after {
+        left: -8px;
+        opacity: 1;
+        border-left-color: #b55;
+      }
+    }
+  }
+}

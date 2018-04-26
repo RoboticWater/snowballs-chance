@@ -1,71 +1,21 @@
 [
 	{
-		"title": "OneNode",
-		"tags": "Tag",
-		"body": "This is a test line",
+		"title": "Start",
+		"tags": "",
+		"body": "-> <i>Take a closer look</i>\r\n    <i>It looks like a sword.</i>\r\n    -> <i>Try to pull the sword</i>\r\n        <i>It doesn't budge.</i>\r\n        -> <i>Try to pull the sword again</i>\r\n            <i>Still nothing happens. The sword seems to have been stuck in the rock for years, so you decide to leave it alone.</i>\r\n            [[After sword]]\r\n        -> <i>Continue moving onwards</i>\r\n            You roll away from the sword and continue on your journey.\r\n            [[After sword]]\r\n    -> <i>Ignore the sword in the rock and continue moving onwards</i>\r\n        [[After sword]]\r\n-> <i>Continue moving onwards</i>\r\n    <i>You roll away from the sword and continue on your journey.</i>\r\n    [[After sword]]",
 		"position": {
-			"x": 449,
-			"y": 252
+			"x": 120,
+			"y": 6196
 		},
 		"colorID": 0
 	},
 	{
-		"title": "ThreeNodes",
+		"title": "After sword",
 		"tags": "",
-		"body": "<i>Begin the game</i>\n<<audio amb_horror>><<title hide>><i>You fall for what seems like an eternity down a swriling vortex of darkness. You don't remember what happened. You don't know where you're going.</i>\n[[Hello|Option1]]\n[[Option2]]",
+		"body": "Empty Text",
 		"position": {
-			"x": 449,
-			"y": 252
-		},
-		"colorID": 0
-	},
-	{
-		"title": "Option1",
-		"tags": "",
-		"body": "<<audio amb_office>>This is Option1's test line",
-		"position": {
-			"x": 770,
-			"y": 84
-		},
-		"colorID": 0
-	},
-	{
-		"title": "Option2",
-		"tags": "",
-		"body": "This is Option2's test line",
-		"position": {
-			"x": 774,
-			"y": 404
-		},
-		"colorID": 0
-	},
-	{
-		"title": "NamedLink",
-		"tags": "",
-		"body": "This is a test line\nThis is another test line\n[[First choice|Option1]]\n[[Second choice|Option2]]",
-		"position": {
-			"x": 774,
-			"y": 404
-		},
-		"colorID": 0
-	},
-	{
-		"title": "OneLinkPassthrough",
-		"tags": "",
-		"body": "First test line\n[[Option1]]",
-		"position": {
-			"x": 774,
-			"y": 404
-		},
-		"colorID": 0
-	},
-	{
-		"title": "LinkAfterShortcuts",
-		"tags": "",
-		"body": "First test line\n-> Shortcut 1\n\tThis is the first shortcut\n-> Shortcut 2\n\tThis is the second shortcut\n[[First link|Option1]][[Second link|Option2]]",
-		"position": {
-			"x": 774,
-			"y": 404
+			"x": 352,
+			"y": 6435
 		},
 		"colorID": 0
 	}

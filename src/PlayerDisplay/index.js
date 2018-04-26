@@ -5,12 +5,11 @@ import rough from 'roughjs';
 
 import './PlayerDisplay.css'
 
-const startLife = 1000;
-
 export default class PlayerDisplay extends Component {
   constructor(props) {
     super(props);
     this.player_canvas = React.createRef();
+    this.playerLife = props.startLife;
   }
 
   update() {
@@ -19,9 +18,16 @@ export default class PlayerDisplay extends Component {
     context.setTransform(1, 0, 0, 1, 0, 0);
     context.clearRect(0, 0, this.player_canvas.current.width, this.player_canvas.current.height);
     context.restore();
-    
-    // Draw rough shapes
-    let s = this.props.life / startLife;
+    console.log(this.playerLife)
+    if (this.playerLife <= 1 && this.props.dying) {
+      console.log("SNOBALL DIED")
+      this.props.snowballDead()
+    }
+    if (this.props.reset)
+      this.playerLife = this.props.startLife;
+    if (this.props.dying && this.playerLife > 1)
+      this.playerLife -= 1;
+    let s = this.playerLife / this.props.startLife;
     let es = lerp(0.1, 1, s);
     const rc = rough.canvas(this.player_canvas.current);
     let body = svgpath("M40.6,65.8c-16.8,3.4-76.2,4.4-88-1.6C-100.1,37.5-54.1-68.5,2.2-68.5C65.5-68.5,98.6,54.1,40.6,65.8z")
@@ -32,13 +38,16 @@ export default class PlayerDisplay extends Component {
     rc.path(eye_right.scale(es).translate(100, 100).toString(), { fill: 'black', roughness: 0.7, stroke: '#5d5555' })
   }
 
-  // componentDidMount() {
-  //   let interval = setInterval(this.update.bind(this), 100);
-  //   this.setState({ interval: interval });
-  // }
+  componentDidMount() {
+    let interval = setInterval(this.update.bind(this), 100);
+    this.setState({ interval: interval });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.interval)
+  }
 
   render() {
-    this.update();
     return (
       <div className={classNames("PlayerDisplay")}>
         <canvas className="player" width="200" height="200" ref={this.player_canvas}></canvas>

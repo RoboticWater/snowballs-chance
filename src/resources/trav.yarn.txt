@@ -1,0 +1,225 @@
+title: TravStart
+tags: 
+colorID: 0
+position: 120,6196
+---
+<<image traveller>>
+<i>A man grunts with exasperation</i> I knew it… I knew it.. I kn.. Oh! Hello! I don’t think I have seen another person in days... or maybe months. I was beginning to think I was all alone. So.. what the heck are you doing here anyways?
+[[I just got here and looking around.|con2]]
+[[I am not sure I am trying to see what this place is all about. Why are you here?|con1]]
+[[I’m honestly not sure. What's the deal with you?|con1]]
+[[Leaving, actually|Walk away]]
+===
+title: con2
+tags: 
+colorID: 0
+position: 513,6584
+---
+N..N..New? I think I have only heard of stories where people met newys. I think you are also the only person I have meet so far on my journey. What made you want to leave that boring gray office, wait... yea it was gray right? Eh whatever. 
+[[There was no point in staying there. I may as well see what else is out here, like that guy rolling the stone back there.|con3]]
+[[I am honestly no quite sure. At the time I had nothing else to do. I didn't feel comfortable staying where I was, I needed to keep moving.|con4]]
+[[There was nothing that made me want to stay|con4]]
+===
+title: con1
+tags: 
+colorID: 6
+position: -129,6633
+---
+I have been travelling for a few months… I think. I am not sure, I decided to leave my home town a while back and try to find something better, but I don’t know what that is, maybe a way out. 
+[[Wow, I can't believe you have travelled this far! You must have seen so much! Did you happen to see that man with the big rock? |con3]]
+[[Wait.. you said you came from a town? I haven't seen one of those. What was that like?|Describing town]]
+===
+title: Describing town
+tags: 
+colorID: 0
+position: -734,6560
+---
+Well there was.. the uhh.. the market, ya ya the market, and the little houses people had made. A man used to play the banjo all the time by his house. I can't remember the place's name though. There was a bank or something that everyone seemed to go to often. It wasn't a <em>horrible</em> place, just not where I wanted to be.
+[[Can you not remember it better than that? Maybe you should go back, by now it might have changed a lot and be more of what you want.|Head back to town]]
+[[Do you remember anything else?|More about town]]
+===
+title: con3
+tags: 
+colorID: 0
+position: -182,6966
+---
+Huh? What in the world are you talking about? I haven’t seen anyone in a long time. The last person I remember is that guy, umm, he was kinda short, long hair, uhh nevermind that doesn't seem right.
+[[How have you not noticed anything? There has to be so many cool things around here!|Focused on journey]]
+[[You have to be kidding! What have you been doing? Walking with your head down?|Focused on journey 2]]
+===
+title: con4
+tags: 
+colorID: 0
+position: 939,6933
+---
+Personally, I didn't like where I had been for what seemed like ages so I packed up and left. I guess I am kinda similar to you now that I think about it. I left because I felt like there was more out there. Like there is a place better than where I was. A place I could find happiness... but after all this time, I am not sure if there is such a place
+[[Well you <em>are</em> in hell...|con7]]
+[[I haven't really seen anything worth while out here. Just lots of emptiness. |con7]]
+[[I am sure there is something better out here. I am looking for the same thing, I just hope I find it before I melt away!|con8]]
+===
+title: Head back to town
+tags: 
+colorID: 0
+position: -1034,6896
+---
+You know.. that is not really a bad idea. I have been gone so long that things <em>must</em> have changed... right? I mean everything there cannot stay the same forever. Maybe I would like it now.
+
+[[You never know. Its a real possiblity!|About to head home]]
+[[With as little as you remember, I bet you could easily find something you like better there than searching this barron world|About to head home]]
+===
+title: More about town
+tags: 
+colorID: 0
+position: -648,6894
+---
+Honestly, I don't remember much more. Things have gotten very foggy since travelling so much. I.. I don't know why I have such a hard time, but it all runs together.
+[[That's okay. I think it's amazing you have been able to travel this far and see so many unique things! I still remember when I saw the man rolling that ridculous rock way back there|con3]]
+===
+title: Focused on journey 2
+tags: 
+colorID: 0
+position: -395,7399
+---
+No! I haven't been walking with my hea... well, now that you say it. I can't really remember what I have seen on my way here. I just kept walking trying to find an end. Not really paying attention to anything else.
+[[Then start enjoying the journey more than the destination. Start paying attention to what's around you.|Take his time]]
+[[I have found so many interesting artifacts and people on my way just to see you so start looking for things!|Take his time]]
+===
+title: Focused on journey
+tags: 
+colorID: 0
+position: -57,7416
+---
+Cool things? There is nothing here buddy. Like... uhh.. do you see anything around here that is remotely interesting? Its not worth taking the time to stop and look at.
+[[There are plenty of interesting things. You need to focus on your journey more and not just the destination. Enjoy the time it takes to get there.|Take his time]]
+[[Ehh, I guess you may have a point there. There isn't much around. But that doesn't mean you can't talk to people you meet as you travel|Take his time]]
+===
+title: con7
+tags: 
+colorID: 0
+position: 576,7242
+---
+True... but I still think something is out there. At least I hope. What are <em>you</em> looking for?
+[[Somewhere I can get out of this place.|What are we looking for]]
+[[I am not exactly sure. An area that isn't so hot would be nice.|What are we looking for]]
+===
+title: What are we looking for
+tags: 
+colorID: 0
+position: 296,7511
+---
+I doubt you will be able to find that here! I think you have a greater chance finding a needle in a hay stack that never ends.
+[[Even if I can't I am at least going to enjoy being able to see all the cool things I find along the way!|Focused on journey]]
+[[You may be right. I am kind of starting to feel like I may have looked at the situation through rose colored glasses.|We give up on finding something better]]
+===
+title: con8
+tags: 
+colorID: 0
+position: 1108,7267
+---
+Oh, thats true, you are in kind of a hurry arn't cya. You seem really optimistic considering your cicumstances. You really think you can find something don't you?
+[[Of course!|We can find something better]]
+[[I am not sure. After coming this far I am starting to have doubts|We give up on finding something better]]
+===
+title: We give up on finding something better
+tags: 
+colorID: 0
+position: 710,7950
+---
+I understand. I kind of feel like it is pointless to keep going when I don't even know whats out there. But then I don't really even remember what home was like. At this point I am only able to remember little bits of what it was.
+[[Well just go back and it won't matter. Just go back to what you have been doing before you left|Go back home]]
+[[If you don't even remember then how about you just keep travelling. Neither of us are positive there is nothing out here. There are still possibilities, and you have much more time to explore than me.|Keep moving forward]]
+===
+title: About to head home
+tags: 
+colorID: 0
+position: -830,7719
+---
+Hmm.. It <em>is</em> really lonely out here. It could very well be best in the long run to return home
+[[I agree|Go back home]]
+[[Well there is certianly nothing out there to go to|Go back home]]
+===
+title: Take his time
+tags: 
+colorID: 0
+position: -202,7695
+---
+Yea! I need to start paying attention to where I am and not being so narrow minded about where I am going. Now.. if I could just know where I wanted to go. I am still confused on weather I should take the time to go back to that home I sort of remember or trek onward to the unknown...
+[[After coming this far I think you need to keep going. There has to be something out there you will enjoy|Keep moving forward]]
+[[I am not sure either. I know I haven't found anywhere I would want to stay yet, and honestly I don't think I will. You might should go back home instead of walking further away.|Go back home]]
+===
+title: We can find something better
+tags: 
+colorID: 0
+position: 1303,7677
+---
+You know.. you might just be right. Maybe I made a good decision back when I decided to take this journey. I have been thinking about turning around. You know.. calling it quits and heading back to what I know. Or at least what I thought I knew... But I think I should be more optimistic
+[[Why turn back? Just keep going, you never know what you may find|Keep moving forward]]
+[[I don't think I would ever turn back. Not after making it this far|Keep moving forward]]
+[[That's the attitude! Do what feels right for you|Keep moving forward]]
+===
+title: Keep moving forward
+tags: 
+colorID: 0
+position: 899,8632
+---
+After travelling this far, they may be things I never get to see if I turn back now. I don't know what I will find but if I start paying attention to what's around me more then possibly I will enjoy myself more. I feel like I am going to keep travelling onward to explore the unknown!
+[[Sounds like a fantastic journey to me!|Ending]]
+[[I wish I had as much time as you to explore like that. Just take your time and enjoy it all.|Ending]]
+===
+title: Go back home
+tags: 
+colorID: 0
+position: 98,8761
+---
+After talking with you I do think my best option is to go back home. It makes the most sense to follow what I know instead of wasting my time.
+[[I think that is a wise choice!|Ending]]
+[[Cool! Well I hope you have an interesting trek back|Ending]]
+===
+title: Ending
+tags: 
+colorID: 0
+position: 1843,8807
+---
+Thanks for helping me make a decision. I felt like I was just going to waste so much time here debating with myself on what to do. Thank goodness you came along and helped point me in the right direction!
+[[No problem! Good luck|Walk away]]
+[[You are welcome. Glad I was able to help!|Walk away]]
+===
+title: Walk away
+tags: 
+colorID: 0
+position: 2272,8812
+---
+<i>You slowly roll away from the traveller. Moving ahead on your journey.</i>
+<i>As he fades off into the distance you look ahead at what is coming next.</i>
+<i>As you roll around a large rock in your way you come across something unusual.</i>
+[[sword]]
+===
+title: sword
+tags: 
+colorID: 0
+position: 2639,8805
+---
+<i>As you get closer there is a slight glint in the distance. You can tell it looks like some sort of metal, or maybe a mirror.</i>
+-> <i>Take a closer look</i>
+	<i>It looks like a sword.</i>
+	-> <i>Try to pull the sword</i>
+		<i>It doesn't budge.</i>
+		-> <i>Try to pull the sword again</i>
+			<i>Still nothing happens. The sword seems to have been stuck in the rock for years, so you decide to leave it alone.</i>
+			[[After sword]]
+		-> <i>Continue moving onwards</i>
+			You roll away from the sword and continue on your journey.
+			[[After sword]]
+	-> <i>Ignore the sword in the rock and continue moving onwards</i>
+		[[After sword]]
+-> <i>Continue moving onwards</i>
+	<i>You roll away from the sword and continue on your journey.</i>
+	[[After sword]]
+===
+title: After sword
+tags: 
+colorID: 0
+position: 3046,8830
+---
+<i>You leave the sword behind as you move further into the unknown.</i>
+===

@@ -1,0 +1,877 @@
+title: MB1
+tags: 
+colorID: 1
+position: 15007,-1451
+---
+<i>ZZZZZZZZZ</i>
+[[Um... Excuse me?|MB1a]]
+[[...|MB1]]
+[[<i>shake him semi-violently</i>|MB1c]]
+[[HEYYYYYY!!!!|MB1b]]
+[[<i>leave</i>|end|]]
+===
+title: MB1a
+tags: 
+colorID: 1
+position: 15304,-1767
+---
+<i>Shuffles Slightly</i>
+[[...|MB1]]
+===
+title: MB1c
+tags: 
+colorID: 1
+position: 15173,-924
+---
+<i>mumbles incoherently</i> mmgrmbl...Metro Boomin' want some more nimammbrlb...
+[[...|MB1]]
+===
+title: MB1b
+tags: 
+colorID: 1
+position: 15367,-1233
+---
+... Man why are you yelling? For a ball of snow you really need to learn how to chill...
+[[Who are you? What's your story? Talk to me!|MB2]]
+[[...|MB1]]
+[[How are you so calm? This place is... HELL!|MB2]]
+===
+title: MB2
+tags: 
+colorID: 2
+position: 15705,-1410
+---
+Life, Death, Heaven, Hell, Your Story, Mine ... Its all the same man... Sometimes you just gotta go with the flow. Nowhere to go. Nowhere to be. Like that river over there...
+[[That river... you mean to one made of LAVA!!|MB2a]]
+[[...|MB1]]
+[[Look...I just want to talk to you. What is your story?|MB3]]
+===
+title: MB2a
+tags: 
+colorID: 2
+position: 16106,-1860
+---
+If you don't mind I'm going back to sleep... You're way too intense...
+[[Wait wait... don't I know you?|MB3]]
+===
+title: MB3
+tags: 
+colorID: 3
+position: 16297,-1401
+---
+Man you just don't quit do you... Alright if it'll get you off my ass... I'm Leland Tyler. AKA DJ Metro Boomin'...
+[[Yeah that's right! I heard your stuff on the radio!|MB3a]]
+[[...Never heard of ya...|MB3b]]
+===
+title: MB3a
+tags: 
+colorID: 3
+position: 16655,-1773
+---
+No shit? I'm shook...
+[[Why is that so surprising? You're famous aren't you?|MB5]]
+[[Okay I lied... I have no idea who you are...|MB3b]]
+===
+title: MB3b
+tags: 
+colorID: 3
+position: 16624,-947
+---
+Yeah... Figured as much... You know what this mess is exactly why I gave up to begin with...
+[[Gave up...?|MB5]]
+[[Look why is it my fault that I haven't heard of you?|MB4]]
+===
+title: MB5
+tags: 
+colorID: 5
+position: 17173,-778
+---
+Alright... Look... The success I had in life... Didn't exactly come naturally...
+[[Don't tell me... You found a magic lamp and made a wish?|MB5a]]
+[[So you made a deal with the devil...|MB7]]
+===
+title: MB4
+tags: 
+colorID: 4
+position: 17092,-1405
+---
+Look do you want to hear the story or not... I could go back to chilling peacefully...
+[[Fine! Be that way then|MB14]]
+[[Okay sorry... Go ahead...|MB5]]
+===
+title: MB5a
+tags: 
+colorID: 5
+position: 17406,-1230
+---
+Pot actually...
+[[<b>WAIT AN ACTUAL MAGIC POT???</b>|MB5aa]]
+===
+title: MB5aa
+tags: 
+colorID: 5
+position: 17760,-1246
+---
+No no not <b>A</b> pot... Pot. Laced with something. Knocked me right out...
+[[Okay......|MB6]]
+===
+title: MB6
+tags: 
+colorID: 6
+position: 18117,-1145
+---
+In my dream... She came to me... The Boss. You met her... I 'spect you came from her office none to long ago right?
+[[Wait... The Devil came to you in a dream...?|MB7]]
+===
+title: MB7
+tags: 
+colorID: 0
+position: 17683,-705
+---
+Bingo. I was on the come-up. Trying to hit it big with my music...
+[[And you did it, right? I mean you're famous and all that...|MB8]]
+[[Ah the classic Faust tale...|MB11]]
+===
+title: MB8
+tags: 
+colorID: 1
+position: 18236,-704
+---
+My shit was straight up-- 
+[[Fire?|MB9]]
+[[Trash?|MB9a]]
+===
+title: MB9a
+tags: 
+colorID: 2
+position: 18655,-649
+---
+<b>TRA</b>--Hey...Wait what makes you think that...?
+[[No reason...|MB9b]]
+===
+title: MB9
+tags: 
+colorID: 2
+position: 18552,-1169
+---
+<b>TRASH!</b> Shit was trash! <b>Garbage! Whack! Lame!</b> Get it now? I was a failure...
+[[...|MB10]]
+===
+title: MB10
+tags: 
+colorID: 3
+position: 19066,-1090
+---
+That's why when She came to me offering me success and fortune. Like how you gon' say no to something like that?
+[[Ummmm because she's the <b>LITERAL DEVIL???</b>|MB11]]
+[[Makes sense I suppose...|MB11]]
+===
+title: MB9b
+tags: 
+colorID: 2
+position: 19036,-638
+---
+<i>side-eye</i> ...aaaanyway...
+[[...|MB10]]
+===
+title: MB11
+tags: 
+colorID: 4
+position: 19497,-1416
+---
+Yeah well you know the story from there. Sold my soul, got the got the gold, rags to riches n'shit! Oh well... no use bothering about it now...
+[[Can I hear your music?|MB12]]
+[[So now you're just chilling down here...|MB15]]
+===
+title: MB12
+tags: 
+colorID: 5
+position: 19624,-1062
+---
+You heard that shit all over the place. No point in...
+[[No I mean your old stuff... The stuff from before...|MB13]]
+===
+title: MB13
+tags: 
+colorID: 6
+position: 19726,-628
+---
+Shit I don't care anymore. There's no point in this or anything else. Just letting you know now that it's hot garbage...
+[[<i>Listen to the song</i>|Words Hurt]]
+===
+title: Words Hurt
+tags: 
+colorID: 0
+position: 20309,-652
+---
+<<audio words_hurt>>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting, <br>
+
+I offended<br>
+But demanded<br>
+My pride, my shame<br>
+I just put it on line<br>
+rising,<br>
+It's racing, but smiling<br>
+My, my game<br>
+I'm just doing <br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling,<br>
+Hurting, <br>
+
+I never been defeated<br>
+affected<br>
+My blame, your fault<br>
+I'm not really carring<br>
+Taking things like<br>
+Arranging my news tracks<br>
+Some words<br>
+They've hurt<br>
+Let me on line<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting,<br>
+
+Sometimes is it happening?<br>
+Your words, you don't<br>
+Been around my falling<br>
+Inside in mind<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting, <br>
+
+I offended<br>
+But demanded<br>
+My pride, my shame<br>
+I just put it on line<br>
+rising,<br>
+It's racing, but smiling<br>
+My, my game<br>
+I'm just doing <br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling,<br>
+Hurting, <br>
+
+I never been defeated<br>
+affected<br>
+My blame, your fault<br>
+I'm not really carring<br>
+Taking things like<br>
+Arranging my news tracks<br>
+Some words<br>
+They've hurt<br>
+Let me on line<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting,<br>
+
+Sometimes is it happening?<br>
+Your words, you don't<br>
+Been around my falling<br>
+Inside in mind<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting, <br>
+
+I offended<br>
+But demanded<br>
+My pride, my shame<br>
+I just put it on line<br>
+rising,<br>
+It's racing, but smiling<br>
+My, my game<br>
+I'm just doing <br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling,<br>
+Hurting, <br>
+
+I never been defeated<br>
+affected<br>
+My blame, your fault<br>
+I'm not really carring<br>
+Taking things like<br>
+Arranging my news tracks<br>
+Some words<br>
+They've hurt<br>
+Let me on line<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting,<br>
+
+Sometimes is it happening?<br>
+Your words, you don't<br>
+Been around my falling<br>
+Inside in mind<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting, <br>
+
+I offended<br>
+But demanded<br>
+My pride, my shame<br>
+I just put it on line<br>
+rising,<br>
+It's racing, but smiling<br>
+My, my game<br>
+I'm just doing <br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling,<br>
+Hurting, <br>
+
+I never been defeated<br>
+affected<br>
+My blame, your fault<br>
+I'm not really carring<br>
+Taking things like<br>
+Arranging my news tracks<br>
+Some words<br>
+They've hurt<br>
+Let me on line<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting,<br>
+
+Sometimes is it happening?<br>
+Your words, you don't<br>
+Been around my falling<br>
+Inside in mind<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting, <br>
+
+I offended<br>
+But demanded<br>
+My pride, my shame<br>
+I just put it on line<br>
+rising,<br>
+It's racing, but smiling<br>
+My, my game<br>
+I'm just doing <br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling,<br>
+Hurting, <br>
+
+I never been defeated<br>
+affected<br>
+My blame, your fault<br>
+I'm not really carring<br>
+Taking things like<br>
+Arranging my news tracks<br>
+Some words<br>
+They've hurt<br>
+Let me on line<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting,<br>
+
+Sometimes is it happening?<br>
+Your words, you don't<br>
+Been around my falling<br>
+Inside in mind<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting, <br>
+
+I offended<br>
+But demanded<br>
+My pride, my shame<br>
+I just put it on line<br>
+rising,<br>
+It's racing, but smiling<br>
+My, my game<br>
+I'm just doing <br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling,<br>
+Hurting, <br>
+
+I never been defeated<br>
+affected<br>
+My blame, your fault<br>
+I'm not really carring<br>
+Taking things like<br>
+Arranging my news tracks<br>
+Some words<br>
+They've hurt<br>
+Let me on line<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting,<br>
+
+Sometimes is it happening?<br>
+Your words, you don't<br>
+Been around my falling<br>
+Inside in mind<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting, <br>
+
+I offended<br>
+But demanded<br>
+My pride, my shame<br>
+I just put it on line<br>
+rising,<br>
+It's racing, but smiling<br>
+My, my game<br>
+I'm just doing <br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling,<br>
+Hurting, <br>
+
+I never been defeated<br>
+affected<br>
+My blame, your fault<br>
+I'm not really carring<br>
+Taking things like<br>
+Arranging my news tracks<br>
+Some words<br>
+They've hurt<br>
+Let me on line<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting,<br>
+
+Sometimes is it happening?<br>
+Your words, you don't<br>
+Been around my falling<br>
+Inside in mind<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting, <br>
+
+I offended<br>
+But demanded<br>
+My pride, my shame<br>
+I just put it on line<br>
+rising,<br>
+It's racing, but smiling<br>
+My, my game<br>
+I'm just doing <br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling,<br>
+Hurting, <br>
+
+I never been defeated<br>
+affected<br>
+My blame, your fault<br>
+I'm not really carring<br>
+Taking things like<br>
+Arranging my news tracks<br>
+Some words<br>
+They've hurt<br>
+Let me on line<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting,<br>
+
+Sometimes is it happening?<br>
+Your words, you don't<br>
+Been around my falling<br>
+Inside in mind<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting, <br>
+
+I offended<br>
+But demanded<br>
+My pride, my shame<br>
+I just put it on line<br>
+rising,<br>
+It's racing, but smiling<br>
+My, my game<br>
+I'm just doing <br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling,<br>
+Hurting, <br>
+
+I never been defeated<br>
+affected<br>
+My blame, your fault<br>
+I'm not really carring<br>
+Taking things like<br>
+Arranging my news tracks<br>
+Some words<br>
+They've hurt<br>
+Let me on line<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting,<br>
+
+Sometimes is it happening?<br>
+Your words, you don't<br>
+Been around my falling<br>
+Inside in mind<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting, <br>
+
+I offended<br>
+But demanded<br>
+My pride, my shame<br>
+I just put it on line<br>
+rising,<br>
+It's racing, but smiling<br>
+My, my game<br>
+I'm just doing <br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling,<br>
+Hurting, <br>
+
+I never been defeated<br>
+affected<br>
+My blame, your fault<br>
+I'm not really carring<br>
+Taking things like<br>
+Arranging my news tracks<br>
+Some words<br>
+They've hurt<br>
+Let me on line<br>
+
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Words hurt<br>
+But feeling right<br>
+Words hurt<br>
+But simply change nothing<br>
+Rising, falling<br>
+Hurting,<br>
+
+Sometimes is it happening?<br>
+Your words, you don't<br>
+Been around my falling<br>
+Inside in mind<br>
+[[<b>TURN IT OFF!!!!</b>|MB14]]
+[[Not bad actually! I like it!|MB15]]
+===
+title: MB14
+tags: 
+colorID: 1
+position: 20327,-1096
+---
+Told you... Now get on out of here... I got napping to do...
+[[<i>Leave</i>|end]]
+===
+title: MB15
+tags: 
+colorID: 2
+position: 20786,-1059
+---
+...You do? Why? I mean... It's trash...it...
+[[It's got a catchy tune!|MB16]]
+[[It's got an awesome message!|MB16]]
+[[...Okay you got me... It's a steaming pile...|MB14]]
+===
+title: MB16
+tags: 
+colorID: 3
+position: 20998,-653
+---
+Damn... I gave up... everything... Even more than just my life. All because I didn't think anyone would give me a shot! And now here you are...What <b>THE HELL!</b>
+[[What happened to being chill?|MB17]]
+[[Lets just take a deep breath...|MB17]]
+===
+title: MB17
+tags: 
+colorID: 4
+position: 21241,-1037
+---
+<b>NO! NO DON'T YOU GIVE ME THAT! YOU DON'T KNOW WHAT IT'S LIKE!!</b> To have someone tell you everything you've done and are... is completely useless... 
+[[I wouldn't say <b>useless</b>...|MB18]]
+[[Oh yeah totally... I have <b>no</b> idea what that's like...<i>(sarcasm)</i>|MB19]]
+===
+title: MB18
+tags: 
+colorID: 5
+position: 21053,-1317
+---
+Shit... I... I think I need to be alone... 
+[[I understand... I'll give you some space.|end]]
+[[Hey man. I know how you feel...|MB19]]
+===
+title: MB19
+tags: 
+colorID: 6
+position: 21522,-1438
+---
+What do you mean...?
+[[I'm a <b>SNOWBALL</b> in <b>HELL</b>. I'm the literal embodiment of futility...|MB20]]
+[[...Nevermind it's a long story...|MB21]]
+===
+title: MB20
+tags: 
+colorID: 0
+position: 20470,-1780
+---
+Wow. That's rough...honestly it's like I said. In the end there isn't a point to anything. I thought that only started once I got down here... Turns out there was never a point to begin with... Why bother. Guess I'll just chill.
+[[Hey that's not true...|MB21]]
+[[I guess so...|MB21]]
+[[...|MB21]]
+===
+title: MB21
+tags: 
+colorID: 1
+position: 21330,-1948
+---
+<i>ZZZZZZZZZZZ</i>
+[[<i>Leave</i>|end]]
+[[...|MB21]]
+===
+title: end
+tags: 
+colorID: 2
+position: 18227,-2260
+---
+<i>You got all you could out of Metro... Time to move on.</i>
+[[Next|Snowman]]
+===
+title: Snowman
+tags: 
+colorID: 0
+position: 18190,-2792
+---
+You see what might be a snowman in the distance. 
+[[What's he doing here? <i>Get closer.</i>|Rocks]]
+[[<i>Move on</i>|nextscene]]
+===
+title: Rocks
+tags: 
+colorID: 0
+position: 18219,-3509
+---
+You thought it might be family but... It’s actually three stacked rocks covered in dandruff. Okay.
+[[<i>Move on</i>|nextscene]]
+===

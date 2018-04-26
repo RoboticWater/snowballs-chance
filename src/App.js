@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import svgpath from 'svgpath';
 import rough from 'roughjs';
 import classNames from 'classnames';
-import bondage from 'bondage';
 
 import intro from './resources/sound/intro-timpani.mp3';
 import sunburst from './resources/svg/sunburst.svg';
@@ -11,22 +9,38 @@ import sunburst from './resources/svg/sunburst.svg';
 import Fade from './Fade';
 import DialogDisplay from './DialogDisplay';
 import PlayerDisplay from './PlayerDisplay';
-
-const startLife = 1000;
+import Modal from './Modal';
 
 const audio_files = {
   amb_horror: require('./resources/sound/amb_horror.wav'),
   amb_office: require('./resources/sound/office_music.mp3'),
+  words_hurt: require('./resources/sound/words_hurt.mp3'),
 }
 
 const background_files = {
   'cave': require('./resources/images/background/cave.png'),
-  'office': require('./resources/images/background/office.png')
+  'crazy': require('./resources/images/background/crazy.png'),
+  'office': require('./resources/images/background/office.png'),
 }
 
 const image_files = {
   'devil': require('./resources/images/character/devil.png'),
-  'sis': require('./resources/images/character/sis.png')
+  'sis': require('./resources/images/character/sis.png'),
+  'sis_far': require('./resources/images/character/sis_far.png'),
+  'dj': require('./resources/images/character/dj.png'),
+  'dj_far': require('./resources/images/character/dj_far.png'),
+  'traveler': require('./resources/images/character/traveler.png'),
+  'traveler_far': require('./resources/images/character/traveler_far.png'),
+  'crazy': require('./resources/images/character/crazy.png'),
+  'crazy_far': require('./resources/images/character/crazy_far.png'),
+  'don': require('./resources/images/character/don.png'),
+  'don_far': require('./resources/images/character/don_far.png'),
+  'bones': require('./resources/images/item/bones.png'),
+  'flower': require('./resources/images/item/flower.png'),
+  'glasses': require('./resources/images/item/glasses.png'),
+  'rock': require('./resources/images/item/rock.png'),
+  'snowman': require('./resources/images/item/snowman.png'),
+  'sword': require('./resources/images/item/sword.png'),
 }
 
 const SKIP_THE_BULLSHIT = false;
@@ -39,22 +53,24 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      life: startLife,
       dying: false,
-      interval: null,
       start: false,
       showDialog: false,
       showTitle: false,
       showPlayer: false,
       cornerPlayer: false,
+      reset: true,
       background: 'cave',
       image: '',
+      startLife: 10 * 60 * 7,
+      showModal: true,
     }
     this.introSound = new Audio(intro);
     this.audioAmbient = new Audio();
     this.audioAmbient.autoplay = true;
     this.audioAmbient.loop = true;
     this.audioAmbient.volume = 0;
+    this.dialogRunner = React.createRef();
   }
 
   changeLife() {
@@ -89,9 +105,8 @@ class App extends Component {
   }
 
   setSnowball(state) {
-    console.log(state)
     if (state === 'show')
-      this.setState({ showPlayer: true });
+      this.setState({ showPlayer: true, reset: false, });
     else if (state === 'hide')
       this.setState({ showPlayer: false });
     else if (state === 'corner')
@@ -99,9 +114,18 @@ class App extends Component {
     else if (state === 'center')
       this.setState({ cornerPlayer: false });
     else if (state === 'melting')
-      this.setState({ dying: true });
+      this.setState({ dying: true, reset: false, });
     else if (state === 'cold')
       this.setState({ dying: false });
+    else if (state === 'reset')
+      this.setState({ reset: true, dying: false })
+  }
+
+  snowballDead() {
+    this.setState({ dying: false }, () => {
+      this.dialogRunner.current.snowballDie();
+    });
+    
   }
 
   setTitle(state) {
@@ -116,14 +140,18 @@ class App extends Component {
     this.setState({ image: state })
   }
 
-  componentDidMount() {
-    let interval = setInterval(this.changeLife.bind(this), 100);
-    this.setState({ interval: interval });
-    // runner.load(yarnData);
-  }
-
-  componentWillUnmount() {
-    if (this.state.interval) clearInterval(this.state.interval);
+  reset() {
+    this.setState({
+      dying: false,
+      start: true,
+      showDialog: true,
+      showTitle: false,
+      showPlayer: false,
+      cornerPlayer: false,
+      reset: true,
+      background: 'cave',
+      image: ''
+    });
   }
 
   begin() {
@@ -135,7 +163,7 @@ class App extends Component {
       setTimeout(() => this.setState({ showDialog: true }), 9000);
     }
   }
-// 
+
   render() {
     return (
       <div className="App" style={{backgroundImage: 'url(' + background_files[this.state.background] + ')'}}>
@@ -146,7 +174,11 @@ class App extends Component {
         </Fade>}
         {!this.state.start && <div className="disclaimer">This project includes sound</div>}
         <div className={classNames("player-display", {corner: this.state.cornerPlayer})}><Fade show={this.state.showPlayer} speed="4s ease">
-          <PlayerDisplay life={this.state.life}/>
+          <PlayerDisplay 
+            startLife={this.state.startLife}
+            dying={this.state.dying}
+            reset={this.state.reset}
+            snowballDead={() => this.snowballDead()}/>
         </Fade></div>
         <div className="content">
           <div className="left"></div>
@@ -154,12 +186,14 @@ class App extends Component {
             <div className="image" style={{backgroundImage: 'url(' + image_files[this.state.image] + ')'}}></div>
             {this.state.start && <div className={classNames("dialog-box", {small: this.state.showTitle})}>
                <DialogDisplay
+                ref={this.dialogRunner}
                 show={this.state.showDialog}
                 setAudio={this.setAudio.bind(this)}
                 setSnowball={this.setSnowball.bind(this)}
                 setTitle={this.setTitle.bind(this)}
                 setBackground={this.setBackground.bind(this)}
                 setImage={this.setImage.bind(this)}
+                reset={this.reset.bind(this)}
               />
             </div>}
           </div>
@@ -169,6 +203,11 @@ class App extends Component {
           <img src={sunburst} alt=""/>
           <div className="button" onClick={() => this.begin()}>Begin</div>
         </div>}
+        <Modal className="modal" shade show={this.state.showModal}>
+          <p>This game involves quite a lot of reading on a time crunch. This is deliberate and important to the narrative, but if you think you need more time to experience our story, then who am I to get in the way of your enjoyment?</p>
+          <div className="button" onClick={() => this.setState({ showModal: false })}>Play with Standard Time</div>
+          <div className="button" onClick={() => this.setState({ showModal: false, startLife: 10 * 60 * 18 })}>Play with Extended Time</div>
+        </Modal>
         <div className="vignette"></div>
       </div>
     );
@@ -202,10 +241,6 @@ class HELL extends Component {
 
   componentWillUnmount() {
     clearInterval(this.state.interval);
-  }
-
-  componentWillReceiveProps(newProps) {
-    
   }
 
   render() {

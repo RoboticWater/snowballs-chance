@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import bondage from 'bondage';
-import test from '../resources/test2.json';
+import dialog from '../resources/dialog.json';
 
 import Fade from '../Fade';
 
@@ -22,7 +22,7 @@ export default class DialogDisplay extends Component {
 
   componentDidMount() {
     this.setState({ runner: new bondage.Runner() }, () => {
-      this.state.runner.load(test);
+      this.state.runner.load(dialog);
       this.state.runner.setCommandHandler(command => {
         console.log(command)
         let tokens = command.split(' ');
@@ -41,12 +41,25 @@ export default class DialogDisplay extends Component {
         } else if (tokens[0] === 'title') {
           console.log("SET TITLE");
           this.props.setTitle(tokens[1] === 'show' ? true : false)
+        } else if (tokens[0] === 'reset') {
+          console.log("RESET");
+          this.props.reset()
         }
       });
-      this.state.dialog = this.state.runner.run('Start');
+      this.setState({dialog: this.state.runner.run('Start')}, () => {
+        this.getNext()
+      });
+    });
+  }
+
+  snowballDie() {
+    console.log("SNOWBALL DEAD")
+    this.setState({dialog:  this.state.runner.run('SnowballEnd0')}, () => {
+      console.log(this.state)
       this.getNext()
     });
-    
+    // this.state.dialog = this.state.runner.run('SnowballEnd0');
+    // this.getNext();
   }
 
   getNext(select=null) {
