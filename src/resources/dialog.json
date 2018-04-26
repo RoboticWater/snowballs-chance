@@ -802,9 +802,9 @@
 	{
 		"title": "MB2",
 		"tags": "",
-		"body": "Life, Death, Heaven, Hell, Your Story, Mine ... Its all the same man... Sometimes you just gotta go with the flow. Nowhere to go. Nowhere to be. Like that river over there...\n[[That river... you mean to one made of LAVA!!|MB2a]]\n[[...|MB1]]\n[[Look...I just want to talk to you. What is your story?|MB3]]\n",
+		"body": "Life, Death, Heaven, Hell, Your Story, Mine ... Its all the same man... Sometimes you just gotta go with the flow. Nowhere to go. Nowhere to be. Like that river over there...\n[[That river... you mean to one made of LAVA!!|MB2a]]\n[[...|MB1]]\n[[Look...I just want to talk to you. What is your story?|MB3]]",
 		"position": {
-			"x": 8276,
+			"x": 8284,
 			"y": 1268
 		},
 		"colorID": 2
@@ -812,7 +812,7 @@
 	{
 		"title": "MB2a",
 		"tags": "",
-		"body": "If you don't mind I'm going back to sleep... You're way too intense...\n[[Wait wait... don't I know you?|MB3]]\n",
+		"body": "If you don't mind I'm going back to sleep... You're way too intense...\n[[Wait wait... don't I know you?|MB3]]\n[[Yo, you're that guy!|MB3]]",
 		"position": {
 			"x": 8316,
 			"y": 838
@@ -1002,7 +1002,7 @@
 	{
 		"title": "MB14",
 		"tags": "",
-		"body": "Told you... Now get on out of here... I got napping to do...\n[[<i>Leave</i>|end]]\n",
+		"body": "<<audio amb_horror>>Told you... Now get on out of here... I got napping to do...\n[[<i>Leave</i>|end]]\n",
 		"position": {
 			"x": 11509,
 			"y": 1207
@@ -1082,7 +1082,7 @@
 	{
 		"title": "end",
 		"tags": "",
-		"body": "<i>You got all you could out of Metro... Time to move on.</i>\n[[Next|Snowman]]\n",
+		"body": "<<audio amb_horror>><i>You got all you could out of Metro... Time to move on.</i>\n[[Next|Snowman]]\n",
 		"position": {
 			"x": 10505,
 			"y": 445
