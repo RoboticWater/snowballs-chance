@@ -422,7 +422,7 @@
 	{
 		"title": "Office0",
 		"tags": "",
-		"body": "<<background office>><i>You seem to be in an office.</i>\n<<image devil>><i>The small office is standard; white walls, dust-free furniture, a potted plant. You don’t know how you got here. Neither does the horned office worker in front of you, typing away at the only desk. You see red high-heels peek out below the desk, and an arrow-tipped tail occasionally flicks into sight. It takes a while before the weary worker notices you.</i> Hm? Another deceased? Call me The Devil. I am the proprietor of this plane of perpetual suffering known as Hell. My favourite form of sleep is REM sleep. I’ve been so busy that I’ve hardly slept...not enough manpower...I want to sleep!\n[[Office1]]\n",
+		"body": "<<background office>><i>You seem to be in an office.</i>\n<<image devil>><i>The small office is standard; white walls, dust-free furniture, a potted plant. You don’t know how you got here. Neither does the horned office worker in front of you, typing away at the only desk. You see red high-heels peek out below the desk, and an arrow-tipped tail occasionally flicks into sight. It takes a while before the weary worker notices you.</i> Hm? Another deceased? Call me The Devil. I am the proprietor of this plane of perpetual suffering known as Hell. My favourite form of sleep is REM sleep. I’ve been so busy that I’ve hardly slept...not enough manpower...I want to sleep!\n[[Office1]]",
 		"position": {
 			"x": -96,
 			"y": 22
@@ -432,10 +432,10 @@
 	{
 		"title": "Office1",
 		"tags": "",
-		"body": "Still here? My office is Limbo, but outside is Hell. You may leave at any time. Given your <em>particular</em> constitution, however, you might not last very long....\n[[<i>Leave the office</i>|LeaveOffice]]\n[[Um, hello?|DevilHello]]\n",
+		"body": "Still here? My office is Limbo, but outside is Hell. You may leave at any time. Given your <em>particular</em> constitution, however, you might not last very long....\n[[<i>Leave the office</i>|LeaveOffice]]\n[[Um, hello?|DevilHello]]",
 		"position": {
-			"x": 204,
-			"y": 22
+			"x": 194,
+			"y": 1
 		},
 		"colorID": 0
 	},
@@ -722,7 +722,7 @@
 	{
 		"title": "Ending",
 		"tags": "",
-		"body": "Thanks for helping me make a decision. I felt like I was just going to waste so much time here debating with myself on what to do. Thank goodness you came along and helped point me in the right direction!\n[[No problem! Good luck|Walk away]]\n[[You are welcome. Glad I was able to help!|Walk away]]\n",
+		"body": "Thanks for helping me make a decision. I felt like I was just going to waste so much time here debating with myself on what to do. Thank goodness you came along and helped point me in the right direction!\n[[No problem! Good luck|Walkaway]]\n[[You are welcome. Glad I was able to help!|Walkaway]]\n",
 		"position": {
 			"x": 6816,
 			"y": 1724
