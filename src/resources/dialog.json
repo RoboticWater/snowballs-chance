@@ -1092,10 +1092,10 @@
 	{
 		"title": "Snowman",
 		"tags": "",
-		"body": "<i>You see what might be a snowman in the distance.</i>\n[[What's he doing here? <i>Get closer.</i>|Rocks]]\n[[<i>Move on</i>|nextscene]]\n",
+		"body": "<i>You see what might be a snowman in the distance.</i>\n[[What's he doing here? <i>Get closer.</i>|Rocks]]\n[[<i>Move on</i>|SnowballCrazy]]\n",
 		"position": {
 			"x": 10468,
-			"y": -87
+			"y": -95
 		},
 		"colorID": 0
 	},
@@ -1105,7 +1105,7 @@
 		"body": "<<image snowman>>\n<i>You thought it might be family but... It’s actually three stacked rocks covered in dandruff. Okay.</i>\n[[<i>Move on</i>|SnowballCrazy]]\n",
 		"position": {
 			"x": 10817,
-			"y": -133
+			"y": -195
 		},
 		"colorID": 0
 	},
