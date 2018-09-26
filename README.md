@@ -4,7 +4,7 @@ A narrative adventure game where you're always going to melt, and that might jus
 
 Developed with React, YarnSpinner, and bondage.js
 
-##Contributors:
+## Contributors:
 
 Isabel Aranetta - Art + Writing
 
